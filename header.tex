@@ -1,0 +1,125 @@
+\usepackage[T1]{fontenc}
+\setmainfont[
+  BoldFont = Carlito Bold,
+  ItalicFont = Carlito Italic,
+]{Carlito}
+\usepackage{amsmath}
+
+% erweiterte Möglichkeiten für die Positionierung von Bildern, Tabellen, ..
+\usepackage{float}
+%% Ermöglichen, Grafiken nebeneinander und innerhalb einer Grafik zu platzieren
+\usepackage{subfig}				
+%% für Tabellen
+\usepackage{array}
+% Urlpackage fürs korrekte formatieren von URLs
+%\usepackage[hyphens]{url}
+%\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{lstback}{rgb}{0.94 0.94 0.94}
+\definecolor{cmtcol}{rgb}{0.0 0.5 0.0}
+\definecolor{keycol}{rgb}{0.0 0.0 0.5}
+ 
+ % listings-Konfiguration
+ \lstset{%
+frame=single, 
+aboveskip=12pt,
+backgroundcolor=\color{lstback},
+rulecolor=\color{lightgray},
+basicstyle=\ttfamily\small,
+keywordstyle=\color{keycol},
+emphstyle=\bfseries,
+commentstyle=\color{cmtcol},
+breaklines=true,      % zu lange Zeilen umbrechen
+extendedchars=true,   % Nicht-ASCII-Zeichen korrekt behandeln
+literate={å}{{\r{a}}}1 {Æ}{{\AE}}1 {Å}{{\r{A}}}1 
+    {ä}{{\"a}}1   {ö}{{\"o}}1 {ü}{{\"u}}1 
+    {Ä}{{\"A}}1   {Ö}{{\"O}}1
+    {Ü}{{\"u}}1 
+    {ß}{{\ss{}}}1,
+}
+
+% Most common programming languages are already implemented for automatic
+% highlighting. This is an example I (Michael Valentin Klammer) used in my
+% thesis, for working with the programming language elixir. Which is rather
+% uncommon.
+\lstdefinelanguage{elixir}{
+    morekeywords={case,catch,def,do,else,false,%
+    use,alias,receive,timeout,defmacro,defp,%
+    for,if,import,defmodule,defprotocol,%
+    nil,defmacrop,defoverridable,defimpl,%
+    super,fn,raise,true,try,end,with,%
+    unless},
+    otherkeywords={<-,->},
+    sensitive=true,
+    morecomment=[l]{\#},
+    morecomment=[n]{/*}{*/},
+    morestring=[b]",
+    morestring=[b]',
+    morestring=[b]"""
+}
+
+\lstdefinelanguage{pseudo}{
+    morekeywords={if,not,then},
+    sensitive=true,
+    morecomment=[l]{\#},
+    morecomment=[n]{/*}{*/},
+    morestring=[b]",
+    morestring=[b]',
+    morestring=[b]"""
+}
+%% The following packages are recommendations by Mr. Singer who provided the
+%% template for writing a thesis.
+
+%% Farbdefinitionen
+%\usepackage{color}
+%% PDF
+%\usepackage[unicode=true,pdfusetitle,
+%bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+%breaklinks=true,pdfborder={0 0 1},backref=false,colorlinks=true]
+%{hyperref}
+%
+%% kleinere Überschriften
+%\KOMAoptions{headings=small}
+%% Konfiguration des Inhaltsverzeichnisses
+%\KOMAoptions{toc=listof}
+%\KOMAoptions{toc=bib}
+%
+%% Kein Einrücken der ersten Zeile eines Absatzes, dafür
+%% kleiner Abstand zwischen den Absätzen
+%\setlength{\parskip}{\smallskipamount}
+%\setlength{\parindent}{0pt}
+%
+%% keine Einrückung der Texte bei Bildunterschriften
+%\usepackage{caption} 
+%\captionsetup{format=plain} 
+%
+%\makeatletter
+%
+%% Alle Nummerierungen kapitelweise (chapter)
+%\numberwithin{figure}{chapter}
+%\numberwithin{equation}{chapter}
+%\numberwithin{table}{chapter}
+%
+%\setcounter{secnumdepth}{2}
+%\setcounter{tocdepth}{2}
+%
+%\makeatother
+%
+%\usepackage[utf8]{luainputenc}
+%% Mathematikpaket
+%% für die Auswahl von Schriften
+%\usepackage{fontspec}
+%% Sprachpakete: ngerman ist die Standardsprache
+%\usepackage[english]{babel}
+%% für spezifisches Layout 
+%\usepackage{layout}
+%% Blocksatz verbessern bei pdf Erzeugung
+%\usepackage{microtype} 	
+%% Kapitelüberschrift bei Querverweisen anzeigen
+%\usepackage{nameref}
+%% Einfügen von PDF Dateien
+%\usepackage{pdfpages}
+%% Anmerkungen im Text
+%\usepackage{todonotes}
+%% für Code
+% \usepackage{listings}

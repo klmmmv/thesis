@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Creates a folder with all the different output files and additional resources
+mkdir -p output output/html
+cp -r images output/
+cp html/html_style.css output/html/html_style.css
+
+# Generate PDF file
+pandoc -s --toc --listings --latex-engine=lualatex \
+    -V documentclass=scrbook \
+    -V classoption=oneside \
+    -V geometry='left=3.5cm,top=3cm,right=3cm,bottom=3cm' \
+    -V fontsize=12pt \
+    -V lang=english \
+    -H header.tex \
+    --filter=pandoc-fignos \
+    --filter=pandoc-tablenos \
+    --csl=acm.csl \
+    --filter=pandoc-citeproc --bibliography=bib.bib \
+    --metadata link-citations=true \
+    --dpi=96 \
+    frontmatter.md chap?.md references.md -o output/thesis.pdf 
+
+pdftk A=cover.pdf B=./output/thesis.pdf cat output ./output/thesis_cover.pdf
+# Generate HTML5 file
+#pandoc -S --toc -s -t html5 -c html/html_style.css \
+#    --filter=pandoc-fignos \
+#    --webtex \
+#    --csl=acm.csl \
+#    --filter=pandoc-citeproc --bibliography=bib.bib \
+#    general_metadata.yml chap?.md references.md -o output/thesis.html
+# 
+# Generate epub file
+#pandoc -s -S -t epub3 --epub-metadata epub/metadata.xml \
+#    --epub-cover-image epub/cover.png \
+#    --filter=pandoc-fignos \
+#    --csl=acm.csl \
+#    --filter=pandoc-citeproc --bibliography=bib.bib \
+#    general_metadata.yml chap?.md references.md -o output/thesis.epub

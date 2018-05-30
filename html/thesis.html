@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Michael Valentin Klammer">
+  <title>A Compiler based Virtual Machine Architecture for Subject-oriented Business Process Management</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="html/style.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">A Compiler based Virtual Machine Architecture for Subject-oriented Business Process Management</h1>
+<h2 class="author">Michael Valentin Klammer</h2>
+<h3 class="date">15.10.2017</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#subject-predicate-object">Subject, predicate, object</a></li>
+<li><a href="#s-bpm-process">S-BPM Process</a></li>
+</ul></li>
+<li><a href="#the-virtual-machine-architecture">The Virtual Machine Architecture</a></li>
+<li><a href="#chapter-3">Chapter 3</a></li>
+<li><a href="#chapter-4">Chapter 4</a></li>
+</ul>
+</nav>
+<h1 id="introduction">Introduction</h1>
+<p>The current state of Business Process Management (BPM) shows that companies are not fully satisfied <span class="citation" data-cites="olbrich2010">[@olbrich2010]</span> BPM has been a time intensive and costly process in modern companies since the shift to a post-fordism management era. Which is characterized by a rise of the knowledgement worker and new information technology systems. Therefore, modeling processes can become a complex topic. As a process represents different states Common modeling languages like Business Process Model and Notification (BPMN) encourage modeling complex processes. But also the general approach of defining every state in a process, is unlikely to represent real world scenarios. Simply, there will never be a complete process model which will have states for every possible occurrence in real life. So the point of view of common business process modeling are the executed functions. This stimulates overengineering of processes. While also the use of heavy weight modeling languages makes process engineers to overcomplicate processes.</p>
+<p>The aforementioned problems lead to a need of highly trained business engineers, who are capable of reading and modeling those complex processes. It is obvious that this situation increases costs and further complexity to the organization. In addition, if errors in the model are identified by a worker, he has to consolidate the business engineer to re-model the process. This again is time consuming and therefore cost increasing for the business.</p>
+<p>An ideal Business Process Management System (BPMS) for modeling and maintaining processes would enable workers to improve, enhance or correct a process by themselves. Further it should be able to also execute an improved process.</p>
+<p>Subject-oriented business process management(S-BPM) takes a different approach by putting the subjects in the center of modeling. Subjects are either technological systems or workers, so the actual entities which produce work and value for the business. This approach emphasizes that employees usually know best how to execute tasks. They are aware of the different entities which participate in a process. Further they know how to communicate with those entities. The exchange of messages between those subjects, or entities, is another principal in S-BPM.</p>
+<h2 id="subject-predicate-object">Subject, predicate, object</h2>
+<p>As mentioned above, one of the main ideas of S-BPM is to enable every worker to model and improve business processes themselves. This raises the need for a language which is easy to understand by every employee and not only well trained business process engineers. The lowest common denominator for this situation is the natural language. A natural sentence consists of a subject, a predicate, and an object.</p>
+<h2 id="s-bpm-process">S-BPM Process</h2>
+<blockquote>
+<p>An S-BPM process (short process) is defined as set of agents each of which is equipped with an SBD so that the process behavior can be defined by the SBD-behavior of its subjects <span class="citation" data-cites="fleischmann2010">[@fleischmann2010, p.473]</span></p>
+</blockquote>
+<p>There is a distinction between S-BPM process models and S-BPM process instances. While the model represents the general behaviour of pariticipating parties and how a business transaction is managed. A process instance is a concrete occurence of the process described and contain data like actors, activities, affected business objects and messages<span class="citation" data-cites="fleischmann2010">[@fleischmann2010]</span>.</p>
+<p>Example: An employee generates an instance of a process, when he makes a travel application in an according IT-system. Thus a process is instantiated and started in an execution environment. This could also happen automatically by certain circumstances.</p>
+<p>The S-BPM stakeholders are:</p>
+<ul>
+<li>Governors</li>
+<li>Actors</li>
+<li>Experts</li>
+<li>Facilitators</li>
+</ul>
+<p>S-BPM processes can be described through a Subject Behaviour Diagram (SBD) and a Subject Interaction Diagram (SID). Both diagrams can be expressed graphical and tabular/textual forms as follows:</p>
+<table style="width:96%;">
+<caption>Subject Behaviour Diagram of a business trip approval process</caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 22%" />
+<col style="width: 29%" />
+<col style="width: 30%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Nr.</th>
+<th style="text-align: left;">State</th>
+<th style="text-align: left;">Predicate</th>
+<th style="text-align: left;">Object Go</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">S</td>
+<td style="text-align: left;">Function State</td>
+<td style="text-align: left;">Creates</td>
+<td style="text-align: left;">Design</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Send State</td>
+<td style="text-align: left;">Sends</td>
+<td style="text-align: left;">Design</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sends to</td>
+<td style="text-align: left;">Manager</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="the-virtual-machine-architecture">The Virtual Machine Architecture</h1>
+<p>The idea of a Compiler-Virtual Machine based approach of a Business Process Execution Platform has been first proposed by Prinz <span class="citation" data-cites="prinz2014">[@prinz2014 et.al.]</span>. This approach has been influenced by the idea of a compiler for business processes by <span class="citation" data-cites="koehler">[@koehler]</span>.The basic idea is to close the gap between a business process model and its digitalized instance of an executable process. But <span class="citation" data-cites="singer2016">[@singer2016]</span> enhanced this model by proposing an actor based solution with the philosophy of S-BPM in mind and also using S-BPM as modeling language. There are several important reasons which should be mentioned for his decision.</p>
+<p>First here seems to be a large gap between theory, academic research and practice [TODO citation needed]. Therefore a way of modeling is needed which enables every participating employee to express his point of view into a language which can be used to model a process. Further <span class="citation" data-cites="singer2016">[@singer2016]</span> proposes a general purpose virtual machine for hosting processes without the need of a heavy weight business process management system (BPMS). For the technical implementation he chooses the Erlang/Elixir platform, as it has many concepts concerning concurrency and processes which directly map one to one to S-BPM modeling techniques and basics of communications between subjects.</p>
+<p>This thesis aims to implement such a virtual machine for S-BPM processes. Also it especially tries to show, how Elixir on top of the Erlang-VM is able to support this approach. As the implementation depicts a S-BPM process also from a technically point of view.</p>
+<p>Additionally this thesis also criticizes the use of metaprogramming for producing source code and further compile it into an executable Elixir application. As the solution will use Elixir processes for depicting subjects in an S-BPM process.his will be the second Chapter.</p>
+<p>Of course the virtual machine architecture has some prerequisites to fulfill. Those requirements are- at the same time- goals and functionalities of business process management of the architecture. <span class="citation" data-cites="prinz2015">[@prinz2015]</span> states the Requirements as it is know typically in the process life cycle:</p>
+<ol type="1">
+<li>The process is analyzed,</li>
+<li>implemented,</li>
+<li>executed,</li>
+<li>during its life span it is being monitored and</li>
+<li>improved continuously.</li>
+</ol>
+<p>To realize the aforementioned system and guarantee its overall functionality, <span class="citation" data-cites="prinz2014">[@prinz2014]</span> proposes an architecture which consists of two main parts. A compiler and a virtual machine, as it can be seen in [compiler-engine].</p>
+<figure>
+<img src="images/compiler-engine.png" title="Overview of the compiler-engine and the virtual machine" alt="compiler-engine" /><figcaption>compiler-engine</figcaption>
+</figure>
+<p>It can criticized if the phrases &quot;compiler&quot; and &quot;virtual machine&quot; are well fitted to describe the system. Lets first look at the compiler side. In Prinz' and Singers proposal and refinements, there is a compiler-like application which parses, transforms and semantically analyzes the given process model. Which does not resemble a complete and proper compiler. Though a compiler is composed of two main phases which can be differentiated into several other phases <span class="citation" data-cites="grundlagen">[@grundlagen]</span>: The analysis and the synthesis. Where the analytical phase(ususally also known as the compiler-frontend) consist of a lexical, syntactic and semantic analysis. The second phase (compiler-backend) consists of a intermediate code generator an code optimizer and a final code generator. The overall structure can be seen in [compiler].</p>
+<figure>
+<img src="images/compiler.png" alt="compiler" /><figcaption>compiler</figcaption>
+</figure>
+<h1 id="chapter-3">Chapter 3</h1>
+<div class="sourceCode"><pre class="sourceCode elixir"><code class="sourceCode elixir">test <span class="op">=</span> %{<span class="va">:one</span> <span class="op">=&gt;</span> <span class="st">&quot;hello&quot;</span>, <span class="va">:two</span> <span class="op">=&gt;</span> <span class="st">&quot;world&quot;</span>}
+<span class="cn">IO</span><span class="op">.</span>puts test<span class="op">.</span>one <span class="op">&lt;&gt;</span> test<span class="op">.</span>two</code></pre></div>
+<h1 id="chapter-4">Chapter 4</h1>
+<p>This will be the fourth chapter.</p>
+</body>
+</html>
