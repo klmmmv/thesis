@@ -14,12 +14,15 @@ Prerequisites:
   ./topdf
   ~~~
 
+Though I only used this repository under linux, most of it should be analogous to
+Windows and MacOSX. But it has not been tested on anything else than linux.
+
 Understanding this repository
 --------------------------------------------------------------------------------
 
 This repository is my master thesis at the FH Joanneum for getting a master of science.
 It should be used as a reference for writing scientific papers with only using the
-markdown standard ([pandocs own markdown](http://pandoc.org/MANUAL.html#pandocs-markdown)
+markdown standard ([pandocs own markdown](http://pandoc.org/MANUAL.html#pandocs-markdown))
 and pandoc (a conversion tool for a lot of input and output formats).
 
 ### Crucial parts
@@ -48,10 +51,27 @@ conservative stylesheet.
 When you execute the **topdf** script, an **output/** directory is being created with all the 
 necessary files for publishing your paper. The pdf, the epub and all the files for a 
 complete html site.
+The **filter/** directory is used for additional pandoc filters. As I can't remember where
+I got the **table_image.py** filter from, I added it to this repository. Usually you install
+them via the python package manager **pip**. 
+
+Filters in
+pandoc are used for preformatting your markdown files, to add additional functionality to your
+markdown syntax. For example the **pandoc-tablenos** filter is used to reference tables
+inside your content with ``+@tbl:id``. This is not a standard feature by pandoc.
+
+Images
+--------------------------------------------------------------------------------
+
+The images are stored in the according folder, though you can place them anywhere you want.
+It is important to note, that not all vector graphic formats are implemented for latex. The only
+format I got to work was the eps format. The latex compiler will give an error, when handling eps files
+but it will work nevertheless. 
+The images folder will be copied to the output folder, for the html publication if needed.
 
 Citation
 --------------------------------------------------------------------------------
 
 If you want to use a different citation style, alter the `--csl` option in the
 `topdf` script. You can download all different kinds of csls from
-[here](https://github.com/citation-style-language/styles)
+[here](https://github.com/citation-style-language/styles).
