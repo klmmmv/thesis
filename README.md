@@ -4,13 +4,15 @@ README
 Prerequisites:
 - install [pandoc](http://pandoc.org)
 - install latex with lualatex engine
-- on Unix-like platforms install the Calibri font: 
-    ~~~bash
-        wget http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer
-        chmod +x vistafonts-installer
-        ./vistafonts-installer
-    ~~~
+- install pandoc filter:
+  ~~~.bash
+  pip install pandoc-fignos pandoc-tablenos
+  ~~~
 - download this repository and execute topdf
+  ~~~.bash
+  chmod +x topdf
+  ./topdf
+  ~~~
 
 Citation
 --------------------------------------------------------------------------------
