@@ -595,6 +595,55 @@ Not discussed:
 > Thus,model checking can provide a significant increase in the level of 
 > confidence of a system design.
 
-## Some definitions 
+## Comparison with other modeling methods
 
+To clarify why the ASM method was chosen among the other methods for interpreting and
+modeling an overview of the other languages shall be given.
 
+There is a wide variety of modeling languages and methods for business processes. In
+[@alphabetsoup] a comparison of the most common modeling languages is given. The languages
+are compared by four basic views which give different kinds of informations:
+
+1. the informational view of objects and subjects which are part of the process,
+2. the functional view which gives information about the transitions --- the state --- 
+   of subjects and objects,
+3. the dynamic view of the process, like scheduling and triggers of actions and
+4. the organizational view, which represent the actors and roles who are responsible
+   for the value of the company.
+
+According to this different kind of views, the following table for language coverage can 
+be established:
+
+---------------------------------------------------------------------------
+ Language   Informational   Functional      Dynamic         Organizational
+            view            view            view            view
+---------- --------------- --------------- --------------- ----------------
+IDEF3      								   definately
+
+Petri Nets 								   definately
+
+RAD        somewhat						   definately      definately
+
+EPC        references                      definately      references
+
+REA                         definately     definately      definately 
+
+BPML       references                      definately      somewhat
+
+WPDL       references
+
+RosettaNet definately                      definately
+
+ebXML      definately                      definately      somewhat
+
+BPEL4WS    references                      definately      definately
+
+OORAM      definately       somewhat       definately      somewhat
+
+EDOC       definately       definately     definately      definately
+
+UML2       definately       definately     definately      has the 
+                                                           ingredients
+--------------------------------------------------------------------------
+
+Table: View coverage of various process modeling languages {#tbl:coverage}

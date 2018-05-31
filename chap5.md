@@ -15,10 +15,10 @@ concurrency model of Elixir and Erlang [^elixir].
 
 The purpose of using ASMs and S-BPM together for implementing a BP-runtime,
 enables us to automatically verify and execute processes. Validating a BP
-still required manual work. Based on those techniques we are able to model
+still requires manual work. Based on those techniques we are able to model
 a BP with a software tool and ---upon correct modeling --- instantiate a 
 technical process in a runtime. 
-The theoretical foundation for the following ASM-interpreter is taken from [@fleischmann:2010], [@boerger:2003], [lerchner].
+The theoretical foundation for the following ASM-interpreter is taken from [@fleischmann:2010] and [@boerger:2003].
 
 ## SBDs and SIDs as directed graphs {#graphs}
 

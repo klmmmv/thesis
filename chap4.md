@@ -144,7 +144,7 @@ There are several steps which have to be followed:
 
 [^owl]: The recent specification for OWL can be found at: https://www.w3.org/TR/owl2-overview/ .
 
-In accordance to the above method, [@hoever] et alii define the following terms:
+In accordance to the above method, [@hoever] et al. define the following terms:
 
 - subject,
 - business object,
@@ -156,5 +156,9 @@ In accordance to the above method, [@hoever] et alii define the following terms:
 - exit condition,
 - input pool and
 - size (of input pools).
+
+The class hierarchy with all its relations can be seen in +@fig:hierarchy. 
+
+[Class hierarchy of the S-BPM ontology [@hoever]](images/class_hierarchy.png){#fig:hierarchy}
 
 
