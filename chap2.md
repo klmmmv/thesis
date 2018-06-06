@@ -17,7 +17,7 @@ life-cycle of a process (see +@fig:s-bpm-life-cycle ).
 S-BPM tries to succeed in this empowerment of employees, by providing the most
 simple possible modeling language.
 
-![S-BPM life-cycle](images/s-bpm_life-cycle.png){#fig:s-bpm-life-cycle .class width=462 height=345}
+![S-BPM life-cycle](images/lifecycle.pdf){#fig:s-bpm-life-cycle}
 
 Of course, work performers are not the only employees who continuously develop
 a process. All of the roles in a S-BPM process are described in chapter [S-BPM

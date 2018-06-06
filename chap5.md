@@ -119,17 +119,103 @@ There is no extra implementation needed for scalability and distributed services
 Elixirs concurrency model {#concurrency}
 --------------------------------------------------------------------------------
 
+The erlang platform was first released in 1987 by Ericsson. Its main goal was to program
+the telephone exchange spots and switches in public switched telephone networks.
+Those networks had a lot of different agents--- or autonomous computers--- which had to
+fulfill tasks concurrently together.
+
 Elixirs concurrency model is actor-based. This means that Elixirs thinks of its
-processes the same, as S-BPM of its subject. Every Elixir process is independent
+processes the same way, as S-BPM of its subject. Every Elixir process is independent
 of the rest of the application. It doesn't share any state or other memory with
 other processes or applications. 
-A process in Elixir is basically a self-contained sequential program which runs on its own. It is completely isolated in terms of scheduling and memory access. In Elixir, a process in implemented in the language. It is not an operating system (OS) process or thread. It is entirely handled by the erlang virtual machine, which always consists of only one OS process.
-This way the Erlang VM doesn't need to add OS thread specific overhead to a process and is very lightweight in comparison.
-In comparison, object oriented programming (OOP) languages use objects as their main way of modeling and implementing software. And hierarchies of said objects explain the relation of them. 
+A process in Elixir is basically a self-contained sequential program which runs
+on its own. It is completely isolated in terms of scheduling and memory access.
+In Elixir, a process is implemented in the language. It is not an operating
+system (OS) process or thread. It is entirely handled by the erlang virtual
+machine, which always consists of only one OS process. This way the Erlang VM
+doesn't need to add OS thread specific overhead to a process and is very
+lightweight in comparison.
+In comparison, object oriented programming (OOP) languages use objects as their
+main way of modeling and implementing software. And hierarchies of said objects
+explain the relation of them. 
+In contrast to that concept, in erlang and elixir, applications are built upon
+processes which fulfill tasks and communicate with asynchronous or synchronous messages
+to share their results, which lead to the overall goal.
+Processes are also the main way to store some form of state and update that state
+in the same process.
+To give a better illustration of how important processes are for elixir, the +@fig:vis 
+gives an overview of all processes of an elixir application. The elixir application
+is a web application made with the powerful phoenix web framework [^phoenix]. 
+This is the minimum set of code to run a phoenix web application. Each dot represents
+one process (252 in total). The edges symbolize links, which is used to model a form of
+dependence among processes. One of those links could be a supervision strategy like explained below.
+
+Erlang is capable of handling several 100000 processes on a single machine/erlang node with 4 cores(see subsection [Nodes]) with standard configuration.
+Though it is artificially reduced to "only" 400000 processes per node, the platform is capable of using a lot more processes.
+An often cited illustration of how powerful erlangs processes are, is the usage of erlang at
+Whatsapp serving over two million distinctive connections at a specific point of time [^whatsapp1] [^whatsapp2] [^whatsapp3] [^whatsapp4].
+Unfortunately, Whatsapp is not very verbose about its technical implementations and no newer figures than from 2014
+have not been published.
+In 2014 
+
+![A process overview of a blank phoniex web application.](images/webapp.png){#fig:vis}
+
+As it was stated earlier, the concurrency model is the same as you can find in an 
+SID like in +@fig:legislative, chapter 2. So the agents are sending each other messages
+and can execute tasks. A very basic implementation of a elixir process may look like 
+in the following listing:
+
+~~~{.elixir .numberLines caption="A process implemented in elixir."}
+defmodule MyProcess do
+  def loop() do
+    receive do
+      :hello ->
+        IO.puts "Hello world"
+        loop()
+      :gruessgott ->
+        IO.puts "Grüß Gott die Dame/der Herr!"
+        loop()
+      after 30000 ->
+        IO.puts "Please send something"
+        loop()
+    end
+  end
+end
+~~~
+
+A process always executes a function which it constantly loops through. It
+waits in the ``receive`` block until it gets a message and then executes the 
+according tasks. If you send this process a message containing ``:hello``,
+the process will print ``"Hello world"`` and start the process loop again (calling the ``loop()`` function).
+Also a timeout is set for thirty seconds, after which the process humbly asks
+for some messages.
+
+The usage of this process (``MyProcess``) is illustrated in this interactive elixir (IEx) session:
+
+~~~{.elixir caption="IEx Session on how to use a process"}
+iex> pid = spawn_link(MyProcess, :loop, [])
+iex> send(pid, :hello)
+"Hello world"
+iex> send(pid, :gruesgott)
+"Grüß Gott die Dame/der Herr!"
+~~~
+
+IEx is, as the name suggests, an interactive shell which lets you execute commands and
+is an important development tool, just like in python. Line one spawns a process with 
+the module defined before, executing the function with the name ``loop`` and with an
+empty list of arguments. The result which is stored in the variable ``pid``, is a
+process identifier, which is used to access a process.
+Depending on what message you send to a process, the statements assigned to the message are executed.
+
+Every message which is sent to a process, gets stored in its own message pool. If there is no
+``receive`` block implemented, which handles the incoming message, the message won't be processed, 
+though they can be accessed otherwise.
 
 So a process in Elixir is more than just a way of how to model concurrency. It is the main paradigm on how to build the software and keep state. 
 
-Nodes/Distributed applications
+### Nodes {#nodes}
+
+With the erlang platform, there also comes the feature of erlang Nodes. 
 
 Metaprogramming
 --------------------------------------------------------------------------------
@@ -265,6 +351,16 @@ Validation problem
 ### Abstract State Machines
 
 
+
+[^phoenix]: http://phoenixframework.org/
+
+[^whatsapp1]: https://www.wired.com/2015/09/whatsapp-serves-900-million-users-50-engineers/
+
+[^whatsapp2]: https://blog.whatsapp.com/196/1-million-is-so-2011
+
+[^whatsapp3]: https://www.fastcompany.com/3026758/inside-erlang-the-rare-programming-language-behind-whatsapps-success
+
+[^whatsapp4]: Presentation of Erlang Solutions at Whatsapp https://www.youtube.com/watch?v=c12cYAUTXXs
 
 [^source-elixir]: Kernel source: <https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/kernel.ex>, accessed on 16.08.2017.
 

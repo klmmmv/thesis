@@ -63,10 +63,14 @@ inside your content with ``+@tbl:id``. This is not a standard feature by pandoc.
 Images
 --------------------------------------------------------------------------------
 
-The images are stored in the according folder, though you can place them anywhere you want.
-It is important to note, that not all vector graphic formats are implemented for latex. The only
-format I got to work was the eps format. The latex compiler will give an error, when handling eps files
-but it will work nevertheless. 
+### Vector graphics
+
+Latex is very limited when it comes to vector graphics. The best results I got was
+using Inkscape and exporting the vector graphics to pdf. With the options "rasterize filters"
+and "use exported objects size" set. Through this you get your text correctly printed,
+it will be selectable in the final pdf, just like any other text and you still get your 
+filters (like drop shadows) rasterized into the picture. Everything being scaled accordingly.
+
 The images folder will be copied to the output folder, for the html publication if needed.
 
 Citation
