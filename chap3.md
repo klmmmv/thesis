@@ -548,7 +548,7 @@ logical formula ($\phi$) [@wiki:modelchecking].
 $M \models \phi$
 
 "In terms of mathematical logic, one checks that the system description is a model of a
-temporal logic formula. This explains the term "model checking"." [@principlesmc, pp. 12]
+temporal logic formula. This explains the term 'model checking'." [@principlesmc, pp. 12]
 
 Another purpose of model checking in system design is to evaluate erroneous
 behaviour of a not yet sufficiently modeled system in the design phase.

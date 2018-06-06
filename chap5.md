@@ -10,6 +10,8 @@ Further I will describe why Elixir and especially the Erlang platform
 almost fit one to one to S-BPM if you compare design choices and theoretical
 backgrounds. One of the most important foundations for this work, is the
 concurrency model of Elixir and Erlang [^elixir].
+For an in depth look of various features and concepts of erlang, elixir and the OTP platform
+have a look at [@introducing:erlang], [@introducing:elixir], [@mccord:2015], [@juric:2015elixir], [@pragprog:elixir] and the very good introductory course in [@elixir-lang].
 
 ## ASM Interpreter for S-BPM Processes
 
@@ -33,8 +35,6 @@ Therefore every node has a set of edges and functions which select one of the
 edges as entry or exit. +@fig:node depicts a single node
 
 ![A node according to graph theory](images/node.eps){#fig:node}
-
-
 
 elixir processes don't share anything with other processes when being executed. 
 Supervisors are the common way to handle errors and execution problems,
@@ -155,10 +155,9 @@ Though it is artificially reduced to "only" 400000 processes per node, the platf
 An often cited illustration of how powerful erlangs processes are, is the usage of erlang at
 Whatsapp serving over two million distinctive connections at a specific point of time [^whatsapp1] [^whatsapp2] [^whatsapp3] [^whatsapp4].
 Unfortunately, Whatsapp is not very verbose about its technical implementations and no newer figures than from 2014
-have not been published.
-In 2014 
+have been published.
 
-![A process overview of a blank phoniex web application.](images/webapp.png){#fig:vis}
+![A process overview of a blank phoniex web application.](images/webapp.png){#fig:vis .class}
 
 As it was stated earlier, the concurrency model is the same as you can find in an 
 SID like in +@fig:legislative, chapter 2. So the agents are sending each other messages
@@ -215,7 +214,11 @@ So a process in Elixir is more than just a way of how to model concurrency. It i
 
 ### Nodes {#nodes}
 
-With the erlang platform, there also comes the feature of erlang Nodes. 
+With the erlang platform, there also comes the feature of erlang Nodes. An erlang node
+is simply an erlang VM instance. Nodes can be connected to work together. 
+It is a very important part of enabling distributed, scalable and fault tolerant applications.
+In conjunction with the paradigm of many small processes, distribution and concurrency are
+relatively easy to implement and maintain.
 
 Metaprogramming
 --------------------------------------------------------------------------------
