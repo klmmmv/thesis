@@ -20,10 +20,11 @@ implementation he chooses the Erlang/Elixir platform, as it has many concepts
 concerning concurrency and processes which directly map one to one to S-BPM
 modeling techniques and basics of communications between subjects. 
 
-This thesis aims to implement such a virtual machine for S-BPM processes. Also
+This thesis aims to propose a concept for implementing such a virtual machine for S-BPM processes. Also, 
 it especially tries to show, how Elixir on top of the Erlang-VM is able to
 support this approach. As the implementation depicts a S-BPM process also from a
 technically point of view.
+How elixirs concepts and features map to S-BPM will be shown in the next [chapter](#technics).
 
 Requirements
 --------------------------------------------------------------------------------
@@ -38,6 +39,9 @@ it is know typically in the process life cycle:
 3. executed, 
 4. during its life span it is being monitored and 
 5. improved continuously.
+
+He also states, that the biggest lack in todays BPMS is the execution of processes.
+
 
 A general approach
 --------------------------------------------------------------------------------
@@ -72,23 +76,33 @@ overall structure can be seen in +@fig:compiler
 
 ![compiler](images/compiler.png){#fig:compiler #id .class width=462px height=345px}
 
-Specifics for a S-BPM virtual machine
---------------------------------------------------------------------------------
-
-***TODO:*** add a node repository
-
 ![Overview of the Process VM-architecture concerning the technical implementation with Erlang](images/vmarchitektur.png){#fig:vmarchitecture}
 
-Interfaces for human workers and IT systems
+Frontend for the architecture
 --------------------------------------------------------------------------------
 
-What are humans possible to do with it
 
-How can IT systems interact with it
+A project developed at the FH Joanneum Graz, implemented a web application, which 
+makes it possible to build process models with the S-BPM language.[^github-modeler] The end product of
+the model is an ontology (owl file, see subsection [Ontologies](#ontology)) which represents the process.
 
-How can this represent IoT
+The application enables one to have different accounts, 
+each with his own storage of processes, group similar processes and import and export
+processes from/to OWL files. The modeler has a SID- (see +@fig:modeler-sid-view) and SBD- (see +@fig:modeler-sbd-view)
+view which can be seen in the following
+screenshots:
 
-## The intermediate representation with ontologies
+![The SID view of a process in the modeler.](images/modeler_sid_view.png){#fig:modeler-sid-view}
+
+![The SBD view of a process in the modeler.](images/modeler_sbd_view.png){#fig:modeler-sbd-view}
+
+
+[^github-modeler]: The initial project can be cloned from this repository:
+  https://github.com/stefanstaniAIM/IPPR2016 . A newer version has also been
+  developed and can be accessed at: https://github.com/mkolodiy/s-bpm-modeler .
+  The version used for this thesis was the latter one.
+
+## The intermediate representation with ontologies {#ontology}
 
 As the processes need to be shared over networks and/or organisation
 boundaries, a standardized way of representing a process needs to be

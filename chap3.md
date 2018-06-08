@@ -1,4 +1,4 @@
-# Methodology 
+# Abstract State Machines 
 
 This chapter will introduce the ASM method for high-level system design for
 designing and implementing complex systems. The method itself has been developed
@@ -147,7 +147,7 @@ as an example. The automata shall accept any combination of words, which contain
 01 and its prefix and suffix may be of any combination of 0 and 1. Therefore accepting words could be
 1000111, 0001111 and 01. Words which will not be accepted by the automata are $\epsilon$ (an empty word), 
 111000 and 0.
-Its alphabet is $\Sigma = {0, 1}$. The set of states is $Q = {q_0, q_1, q_2}$, where each state means
+Its alphabet is $\Sigma = \{0, 1\}$. The set of states is $Q = \{q_0, q_1, q_2\}$, where each state means
 the following:
 
 - $q_0$ is the state in which none symbol has been read or the automata has read a 1.
@@ -210,16 +210,19 @@ Location
 
 : Is a pair of a function name $f$ and arguments $(t_i, ...., t_n)$, where $t_i$ is a term.
   In ASMs they represent the concept of basic object containers.
-  In literature locations are often described as tables like in databases. 
+  In literature locations are often described as tables like in databases. In this
+  "virtual table" you could look up every value, computed by the function with the
+  to be looked up arguments. In +@tbl:location you can see that "virtual table",
+  where the function name, are handled similar like private keys in relational databases
+  and the arguments are the attributes. With this information you can lookup the value.
 
-Function name    $a_1$     ...    $a_n$
---------------  -------- ------- -------
- $f$              $v_1$    ...    $v_n$
- $g$              $v_1$    ...    $v_n$
- $h$              $v_1$    ...    $v_n$
- ...
-----------------------------------------
-Table: The location notated as a table.{#tbl:location}
+Function name     $a_1$        ...        $a_n$
+--------------  ----------- ---------- ----------
+ $f$              $v_1$        ...        $v_n$
+ ...              ...          ...        ...
+ $h$              $v_1$        ...        $v_n$
+-------------------------------------------------
+Table: The location notated as a table. {#tbl:location}
 
 Updates
 
@@ -246,7 +249,7 @@ Functions
   And shared functions are readable and updatable by the shared functions executing machine, and other
   machines as well.
 
-![Classification of ASM functions, relations, locations [@boerger:2003, pp. 33]](images/asm_functions.eps){#fig:asmfunctions}
+![Classification of ASM functions, relations, locations [@boerger:2003, pp. 33]](images/asm_functions.pdf){#fig:asmfunctions}
 
 ASM states
 
@@ -264,7 +267,7 @@ ASM run
 State space
 
 : is the set of all possible paths which can be 
-traversed in a real time run of the implemented system. It include every
+traversed in a real time run of the implemented system. It includes every
 possibility inside the systems boundaries.
 
 Basic ASMs are single-agent machines, with a finite set of transition rules of the form 
@@ -288,7 +291,7 @@ EXPORT $id_1,...,id_e$
 SIGNATUREs
 ~~~
 
-In this basic we can see that the ASM module is called $m$ and it imports the functions
+In this basic ASM we can see that the ASM module is called $m$ and it imports the functions
 $id_11$ to $id_{1l_1} from the module $m1$ (accordingly it does so with functions from up to the module $m_k$).
 Further the module exports its functions with the names $id_1$ to $id_e$. Only functions which are 
 exported in their defining module, can be imported into other modules.
@@ -418,7 +421,7 @@ The ground model concern
 
 The refinement concern
 
-: **TODO**
+: 
 
 The subject-orientation concern
 
@@ -463,6 +466,37 @@ agent are in an order relation m before m′ or m after m′." [@fleischmann:201
 ASM refinement is the process of gradually transforming the ground model into 
 easily understandable pseudo-code which the software engineer is able to put
 into compilable code. Therefore it is the opposite of the process of abstraction.
+
+Refinement is one of the three important parts of the ASM method, besides the ground model
+and the notion of ASM itself (what an ASM actually is). 
+
+The process of refinement is to build a more concrete version of the ground model. Theoretically
+there can be infinitely many refinements of a ground model. The exit condition in this case is
+a refinement, which is concrete enough, to enable an engineer to implement the ASM.
+It can take several refinement steps until such a level is reached.
+
+So when looking at the big picture of a system development phase, there will be several different
+versions of the ASM (which represents the to be developed system). Each of those ASMs stands 
+for a specific level of abstraction/refinement of the system as a whole.
+The most abstract level must be understandable by the application domain expert, whereas the 
+most refined version is the direct instruction for an engineer who implements the system.
+Though every refinement of the ground model is supposed to be understandable by both roles, as it is intended to be 
+the common language.
+
+Formally we call an ASM $M$ and its refined version $M\ast$. We define states $S$ of $M$ which tranform into other states
+called $S'$. States of a refined machine are called $S\ast$ and its successor states $S\ast'$ and so on.
+In +@fig:refinement a scheme is depictured to illustrate the relationships of the refined automatas, its states
+and transition steps. 
+
+![The refinement scheme](images/refinement.png){#fig:refinement}
+
+The importance of this scheme lies in its statement about data in a specific state. Data (or locations)
+in a state $S$ must be the same as in $S*$. This formally declares the equivalence between the corresponding
+states of differently refined machines. It is expressed with $\equiv$. 
+
+For system development, this can be seen as a contract for the developers, to ensure valid refined
+models of the initial meaning in the ground model. This is the connection between more abstract and more
+refined machines.
 
 ## ASM Design
 
