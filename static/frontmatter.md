@@ -38,6 +38,7 @@ BPM      Business Process Management
 BPMN     Business Process Model and Notation                                 
 BPMS     Business Process Management System                                  
 DBMS     Database Management Systems
+IoT      Internet of Things
 IR       Intermediate Representation                                         
 JVM      Java Virtual Machine
 OTP      Open Telecom Platform                                               
@@ -46,6 +47,7 @@ SBD      Subject Behaviour Diagram
 SID      Subject Interaction Diagram                                         
 VHDL     VHSIC Hardware Description Language
 ------   -----------------------------------------------------------------------
+
 
 
 

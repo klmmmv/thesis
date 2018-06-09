@@ -16,13 +16,14 @@ process in modern companies since the shift to a post-fordism management era.
 This is characterized by the rise of the knowledge worker and new
 information technology systems. Therefore, modeling processes can become
 a complex topic. 
-As a process represents different states common modeling
+As a process represents different states, common modeling
 languages like Business Process Model and Notation (BPMN) encourage
 modeling complex processes. But also the general approach of defining every
 state in a process, is unlikely to represent real world scenarios. All in all,
 there will never be a complete process model which will implement states for every
 possible occurrence in real life. So the point of view of common business
-process modeling languages are the executed functions (**TODO** explain, function = specific work task). This stimulates
+process modeling languages are the executed functions. Meaning the operations which have 
+to be executed and not considering the employees. This stimulates
 overengineering of processes. While also the use of heavy weight modeling
 languages makes process engineers to overcomplicate processes.
 
@@ -34,7 +35,7 @@ he has to consolidate the business engineer to re-model the process. This again
 is time consuming and therefore increases costs for the business.
 
 There seems to be a large gap between theory, academic research and
-practice [TODO citation needed]. Therefore a way of modeling is needed which
+practice [@olbrich:2010]. Therefore a way of modeling is needed which
 enables every participating employee to express his point of view into a
 language which can be used to model a process.
 
@@ -42,7 +43,7 @@ An ideal Business Process Management System (BPMS) for modeling and maintaining
 processes would enable workers to improve, enhance or correct a process by
 themselves. Further it should be able to equally execute an improved process by them.
 
-Subject-oriented business process management(S-BPM) takes a different approach
+Subject-oriented Business Process Management(S-BPM) takes a different approach
 than, for example, BPMN by putting the subjects in the center of modeling.
 Subjects are either technological systems or workers, so the actual entities
 which produce work and value for the business. This approach emphasizes that
@@ -68,14 +69,14 @@ subjects.
 This thesis aims to implement such a virtual machine for S-BPM processes. It especially tries to show, how Elixir on top of the Erlang-VM is able to
 support this approach. 
 
-As Singer also proposed to use metaprogramming--- which Elixir is capable of---
+Further, metaprogramming--- which Elixir is capable of---
 to compile a business process from its model into an executable program, this
 thesis will evaluate this method. The goal is to let Elixir write source code based on the model and compile it into a single application. This application would represent a business process on a technical level.
 
-Chapter two the theoretical background will be set, by explaining and examining
+Chapter two will set the theoretical background, by explaining and examining
 the parts of S-BPM which are essential to understand the problem. Essential
 language constructs, important for modeling and understanding of a S-BPM process
-models, will be explained. 
+model, will be explained. 
 
 In chapter three the concept of abstract state machines (ASM) will be explained.
 ASMs is one way of notation to express the execution of algorithms. They have become
