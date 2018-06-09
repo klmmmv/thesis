@@ -71,12 +71,14 @@ two main phases which can be differentiated into several other phases
 [see @grundlagen]: The analysis and the synthesis. While the analytical
 phase(usually also known as the compiler-frontend) consists of a lexical,
 syntactic and semantic analysis. The second phase (compiler-backend) consists of
-an intermediate code generator an code optimizer and a final code generator. The
+an intermediate code generator a code optimizer and a final code generator. The
 overall structure can be seen in +@fig:compiler 
 
 ![compiler](images/compiler.png){#fig:compiler #id .class width=462px height=345px}
 
 ![Overview of the Process VM-architecture concerning the technical implementation with Erlang](images/vmarchitektur.png){#fig:vmarchitecture}
+
+A real world example is the llvm 
 
 Frontend for the architecture
 --------------------------------------------------------------------------------

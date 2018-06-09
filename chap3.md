@@ -6,6 +6,25 @@ in the 1990's and successively got more attention, despite the first strong oppo
 Many scientists saw the method as "yet another form of an old fashioned low-level operational method" [@boerger:origins].
 For a more detailed historical view on the topic and several practical impacts and examples see [@boerger:origins].
 
+It was first postulated by Yuri Gurevich [@yuri] in 1985 and later axiomatized in [@yuri2]. Gurevichs motivation for 
+the new computational model was to improve Turings thesis to better understand what algorithms are. 
+[@yuri] Declares ASMs as "a computation model that is more
+powerful more universal than standard computation models". [@reisig] then states the question 
+
+> What, then, makes ASM so unique? In what sense are ASM [...] more powerful?
+
+And he answers the question with:
+
+> The central new idea of ASM is [...] the systematic way of how symbols occurring in the syntactic 
+> representation of a program are related to the real world items of a state.
+
+This stands in contrast to conventional computation, which only "concentrates on the transformation of symbols,
+not dwelling too deply on what they stand for. So when using ASM the notion of states is more about
+the concept designers have in mind, when developing a system, or implementing software.
+[@reisig] even speculates, that one day ASM may be the "adequate notion of 'algorithms'". Keeping in mind
+that computable algorithms are only a subclass (a very important though) of all algorithms.
+
+Beside this epistemological importance of ASMs, the method has already proved to be of practical importance.
 One example for practically using the ASM method can be seen in [@boerger:java]. In this book the ASM method is used to
 provide a structured and high-level description with mathematical and an experimental analysis, of Java
 and the Java Virtual Machine (JVM).
@@ -26,14 +45,18 @@ As the ASM method is a complete framework for developing big systems, it not onl
 methods for proving the correct implementation of systems. But has also a lot to offer for typical
 project management tasks like requirements analysis, documentation and distributed working.
 
-This thesis though, will concentrate on the formal method of implementing systems with software.
-In detail, it will be used to translate an intermediate representation of a business model,
-into a executable program inside a virtual machine environment.
-
 The purpose of this methodology is to guarantee a match between the users understanding of a 
 business process, and the technical implementation of it, representing the correct meaning.
 The ASM method helps doing exactly that. Though a one hundred percent correctness in the 
 implementation, concerning the intention of the process modeler, is naturally not possible.
+
+This thesis though, will concentrate on the formal method of implementing systems with software.
+In detail, it will be used to translate an intermediate representation of a business model,
+into a executable program inside a virtual machine environment.
+
+The purpose of ASM in the context of this thesis is to understand, how different agents (subjects in S-BPM
+terminology), may execute specific tasks and change state during a run of the system. It helps to understand
+what a state in S-BPM is, and how it can be translated into programming language.
 
 ## The Abstract State Machines method for high-level system design and analysis
 
@@ -44,16 +67,15 @@ implementation, concerning the intention of the process modeler, is naturally no
 > machines into abstract state machines [...] [@boerger:2003].
 
 Tarski structures are simply arbitrary sets, of arbitrary elements with arbitrary functions and 
-relations defined on them.
+relations defined on them. 
 Another more informal definition, also stated by [@boerger:2003] is that basic ASMs
 are "pseudo-code over abstract data".
-Instead of the FSMs internal control states, which are unstructured (**TODO** what does unstructured mean?)
+Instead of the FSMs internal control states, which are simply symbols for naming the state (e.g. $\{A, B, C\}$)
 , ASMs use arbitrarily complex data in its states.
 
 ASMs experienced a shift in its notion from "simultaneous parallel actions of a single agent", to a more general
 definition of "multiple agents act and interact in an asynchronous manner" [@boerger:2003, pp. 28].
-
-ASMs interpreted intuitively can be seen as a virtual machine executing pseudo-code operating on abstract data structures [@boerger:2003, Sect. 2.4]
+ASMs interpreted intuitively can be seen as a virtual machine executing pseudo-code operating on abstract data structures. 
 
 Basically there are three stumbling blocks for a designer of software and/or
 hardware engineers, when they want to develop a system:
@@ -62,14 +84,14 @@ hardware engineers, when they want to develop a system:
 - complexity
 - and trustworthiness [@boerger:2003, p.1].
 
-The ASM-method is suited for procedural single-agent and for asynchronous
+The ASM-method is suited for procedural single-agent and for asynchronous/synchronous
 multiple-agent distributed systems.
 
 The method bridges the gap between a human understanding and formulation of
 real-world problems and the deployment of their algorithmic solutions
 (implementation as a software and/or hardware machine).
 
-The ASM-method enables engineers to:
+Using ASMs enables engineers to:
 
 - Develop a *ground model*. The ground model represents a correct and complete
   human-centric task formulation. This is the result of the requirements
@@ -86,12 +108,18 @@ There are four major benefits when using the ASM method [@lerchner]:
 - Intelligibility: "The method bridges the gap between the human understanding and formulation of real-world problems and the deployment of their algorithmic solutions by code-executing machines on changing platforms." [@applied:boerger99]
 - Precision: because of its mathematical foundation, the result is a precise model.
 - Scalability: there exist a couple of different kinds of ASMs which have different capabilities.
-  They can be distributed, synchronous or asynchronous, and/or multi-agent ASMs.
+  They can be distributed, synchronous or asynchronous, and/or multi-agent ASMs. There is also
+  the concept of modules when writing an ASM. With cross references between those models, 
+  they act very much like classes or modules like known from general purpose programming languages.
 - Execution: ASM specifications are able to be verified and validated, and therefore can also be executed. 
 
 The ASM-method lets the developer/engineer decide at any given point, which
 layer of abstraction he chooses. As any machine can have a function which is
-more or less powerful (which resembles the granularity of abstraction).
+more or less powerful (which resembles the granularity of abstraction). There are different
+views of abstraction of the process itself. Each one is expressing the same thing, just
+at another level of detail.
+This concept is known as refinement and can also be seen in S-BPM itself. The refinement process
+will be discussed later on in more detail.
 
 The most important practical benefit of the ASM-method is to provide a simple
 and precise framework to communicate and document design ideas and a support for
@@ -102,7 +130,7 @@ existing method of pseudo-code development? To read and write ASMs no knowledge
 of the underlying theory is needed. Though it is the mathematical underpinning
 which makes the method work. The ASM-method "complete(s) the longstanding
 structural programming endeavour by lifting it from particular machine or
-programming notation to truly abstract programming on arbitrary structures"i [@boerger:2003].
+programming notation to truly abstract programming on arbitrary structures" [@boerger:2003].
 
 ASM also can be understood as framework which integrates the following activities and techniques
 to system development, which can be seen in +@fig:framework.
@@ -122,9 +150,25 @@ So validation is the review if the process is effective and "whether its expecte
 in the form of a product or service" [@fleischmann:2010]. This also corresponds to the statement of 
 the ISO 9001.
 
+Before explaining ASMs in detail, the understanding of ASMs can be simplified by three crucial notions:
+
+1. the ASM itself, described with pseudo-code,
+2. the ASM refinement method and
+3. the ASM ground model [@boerger:asmchar].
+
+When talking about pseudo-code, we are talking about "high-level algorithmic processes"[@boerger:asmchar].
+
+
 ## Basic ASMs
 
-To recall, ASMs are enhanced Finite State Machines (FSM). 
+To define an ASM $M$ one has to 
+
+- indicate its signature,
+- the set of declarations of functions and rules (with the function classification see +@fig:asmfunctions),
+- the set of initial states
+- and the unique main rules.
+
+ASMs are enhanced Finite State Machines (FSM). 
 As it is stated in [@pearson:automata] the formal definition of a FSM is a quintuple $M = (Q, \Sigma ,q_{0},\delta ,F)$, where:
 
 - $M$ is the to be described automata,
@@ -135,7 +179,7 @@ As it is stated in [@pearson:automata] the formal definition of a FSM is a quint
 - $F$ is the set of final states, a (possibly empty) subset of $Q$.
 
 The state-transition function $\delta : Q \times \Sigma \rightarrow Q$ means, that in every state out of $Q$
-with an input symbol out of $\Sigma$, the transition function assign a follow-up state. 
+with an input symbol out of $\Sigma$, the transition function assigns a follow-up state. 
 
 Beside the notation of automatas with tuples, there are also two other common notations 
 which have better readability. One being a tabular representation of all concrete 
@@ -158,14 +202,16 @@ the following:
 
 According to this we can define the transition table:
 
-             0       1
----------- ------- -------
- $q_0$      $q_2$   $q_0$
- *$q_1$     $q_1$   $q_1$
- $q_2$      $q_2$   $q_1$
+ current state         0       1
+------------------- ------- -------
+ \rightarrow $q_0$   $q_2$   $q_0$
+ $\ast q_1$          $q_1$   $q_1$
+ $q_2$               $q_2$   $q_1$
 
-Table: Transition table for a simple FSM. {#tbl:transition}
+Table: Transition table for a simple FSM. The $\ast$ symbol, 
+  marks the accepting state and \rightarrow the initial state {#tbl:transition}
 
+A transition function in FSM only accepts two parameters: the current state and the symbol which has been read.
 According to this transition table we get the following transition functions:
 
 - $\delta(q_1, 0) = \delta(q_1, 1) = q_1$
@@ -177,19 +223,15 @@ According to this transition table we get the following transition functions:
 The concrete FSM of the former example can be formalized as the tuple $M = (\{q_0, q_1, q_2\}, \{0, 1\}, \delta, \{q_1\})$.
 Where $\delta$ is the set of all the aforementioned transition functions.
 
-To define an ASM $M$ one has to 
-
-- indicate its signature,
-- the set of declarations of functions and rules (with the function classification see +@fig:asmfunctions),
-- the set of initial states
-- and the unique main rules.
-
-As there is not much literature on ASMs, and the ASMbook is quite limited to mathematicians, the following
+As most of the literature about ASM is quite limited to mathematicians, the following
 definitions shall be listed to understand what each term means. They build the formal foundation and are essential
-for implementing an ASM as a software.
+for implementing an ASM as a software. 
 Though the following concepts are not needed to understand an ASM in its
-graphical (see control state ASM) or pseudo code representation, they certainly do help the software developer
-and people who want to understand the foundation of the ASM method. The definitions are taken from [@boerger:2003]:
+graphical (see [control state ASM](#control-state-asms)) or pseudo code
+representation, they certainly do help the software developer and people who
+want to understand the foundation of the ASM method. 
+
+The definitions are taken from [@boerger:2003]:
 
 
 Signatures
@@ -239,9 +281,9 @@ Functions
   When defining the ground model, one needs to understand the different roles of each agent
   and what the agent is allowed to do.
   Static functions do not depend on the state of the automata and do not change over different
-  runs of the ASM. Dynamc do the exact opposite and may change as the state of a machine progresses.
+  runs of the ASM. Dynamic one do the exact opposite and may change as the state of a machine progresses.
   Dynamic functions are further distincted into controlled, in, out and shared functions. In and 
-  out functions represent a form of input and output of one machine. We also call the in functions
+  out functions represent a form of input and output of a machine. We also call the in functions
   monitored, which makes it obvious, that such functions are not updatable by the machine itself.
   Whereas the out functions are updated by the machine, but not read in any form.
   Similarily, controlled functions are only updatable by the machine itself, but no other machine, but
@@ -267,36 +309,30 @@ ASM run
 State space
 
 : is the set of all possible paths which can be 
-traversed in a real time run of the implemented system. It includes every
-possibility inside the systems boundaries.
+  traversed in a real time run of the implemented system. It includes every
+  possibility inside the systems boundaries.
+
+ASM Submachine
+
+: Submachines typically describe rather complex state transformations. They
+  represent a black box for a complex atomic operation.
+
+### Modeling constructs
 
 Basic ASMs are single-agent machines, with a finite set of transition rules of the form 
 
 ~~~{.pseudo caption="Transition rules of a basic ASM"}
-if Condition then Updates
+if cond then Updates
 ~~~
 
+Where ``cond`` is a Condition as stated above and the updates is the set of function updates.
 The rules of an ASM are also called its *program*.
 
-A concept in ASM to structure the notation of ASMs are modules. They can be seen 
-as modules known from programming languages (like Elixir/Erlang) or packages.
-They are a simple way to ease the process of defining the ASMs. 
-An ASM module consists of the *header* and the *body* which hold the declarations and 
-the signatures of the modules functions. The form looks like in the following listing:
 
-~~~{.pseudo mathescape=true}
-MODULE $m$
-IMPORT $m_1(id_{11},...,id_{1l_1}),...,m_k(id_k1,...,id_{kl_k})$
-EXPORT $id_1,...,id_e$
-SIGNATUREs
-~~~
-
-In this basic ASM we can see that the ASM module is called $m$ and it imports the functions
-$id_11$ to $id_{1l_1} from the module $m1$ (accordingly it does so with functions from up to the module $m_k$).
-Further the module exports its functions with the names $id_1$ to $id_e$. Only functions which are 
-exported in their defining module, can be imported into other modules.
-In the body of the module, the declarations of functions and rules are listed.
-
+Additionally to the basic rules, there are further constructs to implement
+common conditional logics. The ``forall`` construct lets you express
+the simultaneous execution of rules. Where you execute each rule for every
+element of a certain set or type which suffices the guard ($\phi$).
 
 ~~~{.pseudo caption="Simultaneous execution of rule $R$" mathescape=true}
 forall x with $\phi$
@@ -312,11 +348,41 @@ choose x with $\phi$
   $R$
 ~~~
 
+A rule definition looks like the following listings shows:
 
-### Example
+~~~{.pseudo caption="Rule definition"}
+StartEngine = if KeyInLock and KeyIsTurnedToEnd then
+  engine := on
+~~~
+
+``StartEngine`` is the name of the rule and ``engine := on`` is an assignment.
+
+A concept in ASM to structure the notation of ASMs are modules. They can be seen 
+as modules known from programming languages (like Elixir/Erlang) or packages.
+They are a simple way to ease the process of defining the ASMs. 
+An ASM module consists of the *header* and the *body* which hold the declarations and 
+the signatures of the modules functions. The form looks like in the following listing:
+
+~~~{.pseudo mathescape=true}
+MODULE $m$
+IMPORT $m_1(id_{1l_1},...,id_{1l_i}),...,m_k(id_k1,...,id_{kl_j})$
+EXPORT $id_1,...,id_e$
+SIGNATUREs
+~~~
+
+In this basic ASM we can see that the ASM module is called $m$ and it imports the functions
+$id_{1l_1}$ to $id_{1l_i}$ from the module $m1$ (accordingly it does so with functions from up to the module $m_k$).
+Further the module exports its functions with the names $id_1$ to $id_e$. Only functions which are 
+exported in their defining module, can be imported into other modules.
+In the body of the module, the declarations of functions and rules are listed.
+
+
+
+
+### Examples
 
 To better illustrate what an ASM is and how it looks like, some short examples shall be given.
-The first one, is an example for a simple clock. Its only task is to update the current time
+The first one is an example for a simple clock. Its only task is to update the current time
 on the clocks display. Therefore we can write an ASM the following way:
 
 ~~~pseudo
@@ -338,7 +404,7 @@ In this simple example we have declared four functions:
 Another example exhibits a slightly more complex process, a typical 
 ordering process in retail. The goal of the process is, that someone
 invoices all pending/placed orders.
-The example was taken from [@asmbook; p.89]].
+The example was taken from [@boerger:2003]].
 
 To define a ground model ASM of the ordering process, the questions
 from the ground model description should suffice to elevate the problem description.
@@ -354,7 +420,7 @@ The most simple ground model ASM could be the following:
 ~~~{.pseudo mathescape=true}
 SingleOrder =
   choose Order $\in$ ORDER with state(Order) = pending and
-    orderQuantity(Order) <= stockQuantity(produc(Order))
+    orderQuantity(Order) <= stockQuantity(product(Order))
     do
 	  state(Order) := invoiced
 	  DeleteStock(orderQuantity(Order), product(Order))
@@ -367,7 +433,7 @@ a certain product, or none.
 ~~~{.pseudo mathescape=true}
   AllOrNone = choose Product $\in$ PRODUCT
     let pending = {o | state(o) = pending, product(o) = Product}
-	  Total = $\Sigma_(Order \in Pending)$ orderQuantity(Order)
+    Total = $\Sigma_{(Order \in Pending)}$ orderQuantity(Order)
 	  if Total <= stockQuantity(Product) then
 	    forall Order $\in$ Pending
 		  state(Order) := invoiced
@@ -400,66 +466,6 @@ ground models in ASMs:
 - local transitions which alter a global state, and
 - scheduling or cuncurrency issues in the system.
 
-## S-BPM and ASMs - two siblings
-
-Ad the similarities of the S-BPM and ASMs method
-
-> The method bridges the gap between the human understanding and formulation
-> of real-world problems and the deployment of their algorithmic
-> solutions by code-executing machines on changing platforms [@boerger:2003].
-
-both methods share three concern:
-
-The ground model concern
-
-: BP are designed by Domain experts  in natural
-  language, heavily supported by tables, graphics diagrams and so on. Software
-  developers need to put that usually ambiduous, incomplete or inconsistent
-  specification into *code* "The question is how to link "informal" requirements
-  documents to necessarily formalized executable code[...] in a way to guarantee
-  that the code does what the requirements describe."
-
-The refinement concern
-
-: 
-
-The subject-orientation concern
-
-: This means to make the actions of the subjects explicit. Actions in this context means
-  the internal (like seen in the SBD) or the external (like seen in the SID) external.
-
-A complete ASM model is defined as follows 
-: it consists of its rules together
-  with a definition of its signature and a list of all assumptions made on the
-  environment. The signature is a collection of data types, which defines the
-  notion of machine states.
-  Also the underlying timing constraints, the data types, the class of exceptions, 
-  but also the computing resources, the users, etc.
-
-Events
-: Are arbitrary conditions. An event changes the value of at least one guard/condition
-
-Actions
-: are sets of *Updates* of arbitrary memory locations, which can be paremeterized.
-  The parameters are of arbitrary type.
-
-Memory location in Finite State Machines (FSM) are the *in*, *out* and *ctl_state* variables.
-In ASMs they are of arbitrary expressions of arbitrary types.
-
-## Multi agent ASMs
-
-Multi agent ASMs are basic ASMs in a distributed environment. In the context of ASMs
-and automata theory, distributed is a synonym for asynchronous. Meaning that several agents
-(in this case called machines or automaton) are able to work in an independent way and 
-communicating with other agents through asynchronous messages. This means that sending and 
-receiving a message, will never block an agent in its behaviour.
-
-"When dealing with multi-agent systems we use sets of agents each executing its own ASM."
-
-"This means that technically speaking a run of an asynchronous ASM is not a
-sequence of steps of an agent, but a set of such sequences defined by the
-involved agents, where steps m of an agent which depend on steps m′ of another
-agent are in an order relation m before m′ or m after m′." [@fleischmann:2010]
 
 ## ASM Refinements
 
@@ -497,14 +503,6 @@ states of differently refined machines. It is expressed with $\equiv$.
 For system development, this can be seen as a contract for the developers, to ensure valid refined
 models of the initial meaning in the ground model. This is the connection between more abstract and more
 refined machines.
-
-## ASM Design
-
-The design activities consist of three steps [@boerger:asmchar]:
-
-- The ground model construction is a blueprint which captures the initial requirements.
-- The model refinement
-- Model change is a combination of the former two. 
 
 ## The ground model
 
@@ -553,7 +551,72 @@ translate a piece of "reality" to a linguistic description.
 Two main parties are involve in system engineering: Domain experts and system
 designers.
 
-## System Design generel / model checking
+## Control State ASMS {#control-state-asms}
+
+Beside using pseudo-code for describing ASMs, there is also a graphical notation, which is
+especially used for ground models, or highly abstracted refinements. An example containing all
+shapes is illustrated in +@fig:control-state-asms. The circular shape is expressing a state, or the rules 
+which need to be executed so the according state can be reached. Rectangular shapes can also be used
+to execute ASM submachines.
+The hexagon shape is a simple condition. 
+
+![The notation for a graphical representation of ASMs](images/control-state-asms.png){#fig:control-state-asms}
+
+This control-state ASM can be translated into the usual pseudo-code variation:
+
+~~~.asm
+if ctl = i then
+  if cond then rule
+    ctl := j
+~~~
+
+## Multi agent ASMs
+
+Multi agent ASMs are basic ASMs in a distributed environment. In the context of ASMs
+and automata theory, distributed is a synonym for asynchronous. Meaning that several agents
+(in this case called machines or automaton) are able to work in an independent way and 
+communicating with other agents through asynchronous messages. This means that sending and 
+receiving a message, will never block an agent in its behaviour.
+
+"When dealing with multi-agent systems we use sets of agents each executing its own ASM."
+
+"This means that technically speaking a run of an asynchronous ASM is not a
+sequence of steps of an agent, but a set of such sequences defined by the
+involved agents, where steps m of an agent which depend on steps m′ of another
+agent are in an order relation m before m′ or m after m′." [@fleischmann:2010]
+
+## S-BPM and ASMs - two siblings
+
+Ad the similarities of the S-BPM and ASMs method
+
+> The method bridges the gap between the human understanding and formulation
+> of real-world problems and the deployment of their algorithmic
+> solutions by code-executing machines on changing platforms [@boerger:2003].
+
+both methods share three concern:
+
+The ground model concern
+
+: BP are designed by Domain experts  in natural
+  language, heavily supported by tables, graphics diagrams and so on. Software
+  developers need to put that usually ambiguous, incomplete or inconsistent
+  specification into code "The question is how to link "informal" requirements
+  documents to necessarily formalized executable code[...] in a way to guarantee
+  that the code does what the requirements describe."
+
+The refinement concern
+
+: In S-BPM you have the possibility to abstract certain problems, tasks or
+  functions, which are not needed for the understanding of the most basic model
+  of the process. This exact concept is also one of the three main ingredients of ASMs.
+
+The subject-orientation concern
+
+: This means to make the actions of the subjects explicit. Actions in this context means
+  the internal (like seen in the SBD) or the external (like seen in the SID) external.
+
+
+## System Design and model checking - other use cases for ASMs
 
 In Software Verification mostly two methods are used in practice, namely peer review (a static method) and
 software testing (a partly dynamic method). 
@@ -593,6 +656,9 @@ in all of its possible states (like "brute forcing"). This is important for debu
 counter solutions by finding a path of behaviour (several steps through several
 possible states of the system), which leads to malfunction.
 
+To illustrate a possible pitfall in a design of a model, which may not be obvious,
+we examine a simple problem in a parallel environment. The problem is some to be
+executed code, which is able to be computed in parallel by several CPUs or cores.
 Given the following process of a program :
 
 ~~~{.pseudo caption="An intuitively correct pseudo programm with a pitfall"}
@@ -602,7 +668,7 @@ while true do
 ~~~
 
 
-there is no guarantee that the test of the value ``x`` is
+There is no guarantee that the test of the value ``x`` is
 being executed atomically along with the new assignment of ``x``.
 Though an intuitive reading of the example above might not hint at
 possible errors, there is a possibility though. 
@@ -612,22 +678,15 @@ to a not intended value which corrupts the system. The other process
 could change ``x`` to 1338, but the test `` x < 1337`` was intended
 to only change the value of ``x`` when it is below 1337.
 
-Errors:
+For the sake of completeness it shall be mentioned that there may arise problems
+in models, which are not able to be checked.
+State space problems or general performance limitations are one of these problems.
+Models can become too complex and therefore not be able to be processed by today's hardware,
+or because of limited resources. Several techniques for handling those limitations
+have been developed, but will not be discussed in this thesis.
 
-- Modeling error:
-- Design error:
-- Property error:
-
-Not discussed:
-
-- State space problems/ general performance limitations: Models can become
-  too complex and therefore not be able to be processed by today's hardware,
-  or because of limited resources. Several techniques for handling those limitations
-  have been developed, but will not be discussed in this thesis.
-
-> Model checking is an effective technique to expose potential desing errors.
-> Thus,model checking can provide a significant increase in the level of 
-> confidence of a system design.
+Model checking is an effective technique to expose potential design errors.
+In doing so, the confidence in models may increase significantly. 
 
 ## Comparison with other modeling methods
 
@@ -681,3 +740,38 @@ UML2       definately       definately     definately      has the
 --------------------------------------------------------------------------
 
 Table: View coverage of various process modeling languages {#tbl:coverage}
+
+## Conclusion of ASM
+
+ASMs share a lot of similarities with conventional computation models,
+which most software developers are familiar with and use in their day to
+day tasks. The difference though is, that as the name suggests the may be of
+arbitrarily abstract form. The abstract form is emphasized by its pseudo-code
+notation which can be easily understood by, not only engineers, but also the
+application domain experts who understand a process in its operational view
+(instead of the implemented one).
+
+As the ASM method is a hardware and software system design method, it has
+a wide area of application. In the following two chapters, explain how ASMs
+come into use in the compiler based virtual machine architecture.
+
+Besides those use cases, a small excursion to model checking has been made, to show
+that ASMs can also be used to check errors in a system model. This property could be
+used, if business process models, would be designed in ASMs too. Though this is a
+direct competitor to S-BPM as a modeling language as many others.
+
+For this use case control state ASMs have been introduced. A way to design ASMs
+in a graphical notation. In [@boerger-fleischmann:2015] proposes to use control state ASMs 
+to be used as modeling language by business process experts for the following reasons:
+
+- ASMs provide an intuitive but accurate and reliable definition of basic
+  process constructs. This makes it possible to build inspectable and provable
+  ground models.
+
+- Ground models in the ASM context constitue a precise and complete specification 
+  for the software implementation. Yet the underpinning of the method is hidden
+  from the business process expert and (but not necessarily) the software engineer.
+
+The advantages would make it possible to have certifiable processes, which is an
+important factor for the industry. The verification could be achieved by a compiler
+or by providing a design documentation which shows the refinement correctness [@boerger-fleischmann:2015].

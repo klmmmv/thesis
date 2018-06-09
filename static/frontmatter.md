@@ -40,13 +40,13 @@ BPMS     Business Process Management System
 DBMS     Database Management Systems
 IR       Intermediate Representation                                         
 JVM      Java Virtual Machine
-JVM      Java Virtual Machine
 OTP      Open Telecom Platform                                               
 S-BPM    Subject-oriented Business Process Management                        
 SBD      Subject Behaviour Diagram                                           
 SID      Subject Interaction Diagram                                         
 VHDL     VHSIC Hardware Description Language
 ------   -----------------------------------------------------------------------
+
 
 
 

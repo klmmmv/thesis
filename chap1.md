@@ -72,23 +72,26 @@ As Singer also proposed to use metaprogramming--- which Elixir is capable of---
 to compile a business process from its model into an executable program, this
 thesis will evaluate this method. The goal is to let Elixir write source code based on the model and compile it into a single application. This application would represent a business process on a technical level.
 
-The first chapter sets the theoretical background, by explaining and examining
+Chapter two the theoretical background will be set, by explaining and examining
 the parts of S-BPM which are essential to understand the problem. Essential
 language constructs, important for modeling and understanding of a S-BPM process
 models, will be explained. 
 
-The second chapter explains the complete architecture of the compiler based
+In chapter three the concept of abstract state machines (ASM) will be explained.
+ASMs is one way of notation to express the execution of algorithms. They have become
+a solid framework for making distributed business processes executable.
+
+The fourth chapter explains the complete architecture of the compiler based
 virtual machine, which has been proposed in recent academic research. This
 chapter will explain the architecture from a logical point of view.
 
-In the third chapter the implementation with Elixir will be explained. As the
+In the fifth chapter the implementation with Elixir will be explained. As the
 concurrency model of Elixir is based on the same mathematical calculi as S-BPM
 itself, this approach is very promising. Elixir makes it possible to easily
 execute an applications threads on several Elixir nodes, which can be spanned
 over different computer networks. This is important, as business processes can
 involve not only many different employees and workers, but also more than one
 organization with its own network. 
-
 Because of those features of Elixir and the Erlang platform, this technology
 seems to be well suited for the implementation of an Internet of Things (IoT)
 use case. As IoT can also be seen as a business process which connects several
