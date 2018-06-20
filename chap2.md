@@ -93,7 +93,7 @@ the European Union[^eu-procedure] shall be used (see +@fig:legislative). The
 grey rectangular in this figure is the business object, which in this case
 is the proposal. Business objects will be discussed later on.
 
-![The ordinary legislative procedure in the EU](images/print/legislative_process.pdf){#fig:legislative .class width=395 height=299}
+![The ordinary legislative procedure in the EU](images/print/legislative_process.pdf){#fig:legislative .class}
 
 The first step of the procedure is a subject
 which submits a proposal to the European Commission. In this figure a general subject called
@@ -229,7 +229,7 @@ shape and the subjects name (see +@fig:subject). These shapes are used to displa
 the communication structure in a process. The communication structure will be
 further explained in the following sections. 
 
-![Subject](images/subject.png){#fig:subject .class width=57 height=57}
+![Subject](images/print/subject.pdf){#fig:subject .class }
 
 Subjects are only the logical abstraction of a work performer. If there is an
 active process executed in the real world, instances of the subjects will be
@@ -249,7 +249,7 @@ c. A send-state.
 d. A receive state.
 e. A function state.
 
-![Shapes for constructing the behaviour of a subject](images/constructs.png){#fig:constructs .class width=448 height=277}
+![Shapes for constructing the behaviour of a subject](images/print/shapes.pdf){#fig:constructs .class}
 
 ### Subject Behaviour {#s-behaviour}
 
@@ -268,15 +268,15 @@ right now. Fleischmann et al. [@fleischmann:2010, page 196] state:
 In +@tbl:s-behaviour all of the three different kinds of state and their according figures
 are listed. 
 
------------------------------------------------------------------------------------------------
+-------------------------------------------------
 Description           Symbol
---------------------- -------------------------------------------------------------------------
-Function state        ![Subject](images/function_state.png){.class height=57}
+--------------------- ---------------------------
+Function state        ![Subject](images/print/function-state.pdf){.class height=57}
 
-Send state            ![Subject](images/send_state.png){.class height=57}
+Send state            ![Subject](images/print/send-state.pdf){.class height=57}
 
-Receive state         ![Subject](images/receive_state.png){.class height=57} 
------------------------------------------------------------------------------------------------
+Receive state         ![Subject](images/print/recv-state.pdf){.class height=57} 
+-------------------------------------------------
 
 : The different kinds of states of a subject {#tbl:s-behaviour}
 
@@ -299,7 +299,7 @@ This figure already contains a control structure which gives the actor *S1*
 the possibility to send either the message *M1* to *S1* or the message *M2*
 to the subject *S2*.
 
-![Basic communication with control structure](images/basic-communication.png){#fig:basic-communication .class width=500 height=217}
+![Basic communication with control structure](images/print/comm1.pdf){#fig:basic-communication .class }
 
 If we want to describe this basic model with pseudo-code, we could define each
 state with the following code:
@@ -334,7 +334,7 @@ subject is able to go to another predefined state. This behaviour can be seen
 in +@fig:msg-timeout, where the subject goes to state two when one day has been
 passed. 
 
-![Timeout which transists into another state](images/msg-timeout.png){#fig:msg-timeout .class width=550 height=177}
+![Timeout which transists into another state](images/print/comm2.pdf){#fig:msg-timeout .class }
 
 The same concept can be used for receiving messages. If a subject waits for
 a specific time in the receiving state, a different action can be taken than
@@ -344,7 +344,7 @@ variables in the message or business object (which is part of the message).
 The variable in thise case is the approval or disapproval of a manager. 
 Timeouts also can be initiated by subjects themselves. This is yet again a simple message with the variable "breakup" instead of the "timeout" path.
 
-![Timeout and transition logic in receiving state](images/rcv-timeout.png){#fig:rcv-timeout .class width=500 height=238}
+![Timeout and transition logic in receiving state](images/print/comm3.pdf){#fig:rcv-timeout .class }
 
 ### Behaviour Macros
 
@@ -363,7 +363,7 @@ Where the first row lists all possible start states (one per column) and the
 last row does the same with all possible end states. The middle row tells the 
 name of the macro. A macro therefore, only shows the most important part: its interface.
 
-![Behaviour macro](images/macro.png){#fig:macro .class with=114 height=114}
+![Behaviour macro](images/print/macro.pdf){#fig:macro .class }
 
 
 ### Business Objects {#bo}
