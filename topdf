@@ -6,7 +6,7 @@ cp -r images output/
 cp html/html_style.css output/html/html_style.css
 
 # Generate PDF file
-pandoc -s --toc --listings --latex-engine=lualatex \
+pandoc -s --toc --toc-depth=3 --number-sections --listings --latex-engine=lualatex \
     -V documentclass=scrbook \
     -V classoption=oneside \
     -V geometry='left=3.5cm,top=3cm,right=3cm,bottom=3cm' \

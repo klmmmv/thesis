@@ -3,26 +3,24 @@
 Ehrenwörtliche Erklärung
 ================================================================================
 
-Ich erkläre ehrenwörtlich, dass ich die vorliegende Masterarbeit selbstständig
-angefertigt und die mit ihr verbundenen Tätigkeiten selbst erbracht habe. Ich
-erkläre weiters, dass ich keine anderen als die angegebenen Hilfsmittel benutzt
-habe. Alle aus gedruckten, ungedruckten oder dem Internet im Wortlaut oder im
-wesentlichen Inhalt übernommenen Formulierungen und Konzepte sind gemä \ss den
-Regeln für gutes wissenschaftliches Arbeiten zitiert und durch Fu \ss noten bzw.
-durch andere genaue Quellenangaben gekennzeichnet.
+Ich erkläre ehrenwörtlich, dass ich die vorliegende Masterarbeit selbstständig angefertigt
+und die mit ihr verbundenen Tätigkeiten selbst erbracht habe. Ich erkläre weiters, dass ich keine
+anderen als die angegebenen Hilfsmittel benutzt habe. Alle ausgedruckten, ungedruckten
+oder dem Internet im Wortlaut oder im wesentlichen Inhalt übernommenen Formulierungen
+und Konzepte sind gemäß den Regeln für gutes wissenschaftliches Arbeiten
+zitiert und durch Fußnoten bzw. durch andere genaue Quellenangaben gekennzeichnet.
 
-Die vorliegende Originalarbeit ist in dieser Form zur Erreichung eines
-akademischen Grades noch keiner anderen Hochschule vorgelegt worden. Diese
-Arbeit wurde in gedruckter und elektronischer Form abgegeben. Ich bestätige,
-dass der Inhalt der digitalen Version vollständig mit dem der gedruckten
-Version übereinstimmt.
+Die vorliegene Originalarbeit ist in dieser Form zur Erreichung eines akademischen Grades noch keiner
+anderen Hochschule vorgelegt worden. Diese Arbeit wurde in gedruckter und elektronischer Form
+abgegeben. Ich bestätige, dass der Inhalt der digitalen Version vollständig mit dem der gedruckten
+Version übereinstimmt.
 
-Ich bin mir bewusst, dass eine falsche Erklärung rechtliche Folgen haben kann.
+Ich bin mir bewusst, dass eine falsche Erkärung rechtliche Folgen haben kann.
 
 \vspace{3cm}
 
 \begin{tabular*}{14.5cm}{@{\extracolsep{\fill}}>{\raggedright}p{5cm}>{\centering}p{4.4cm}>{\centering}p{5cm}}
-Graz, 15.09.2017 &  & \tabularnewline \cline{3-3} &  & Michael Valentin Klammer \tabularnewline \end{tabular*}
+Graz, 22.06.2018 &  & \tabularnewline \cline{3-3} &  & Michael Valentin Klammer \tabularnewline \end{tabular*}
 
 \listoffigures
 \listoftables
@@ -38,10 +36,13 @@ BPM      Business Process Management
 BPMN     Business Process Model and Notation                                 
 BPMS     Business Process Management System                                  
 DBMS     Database Management Systems
-IoT      Internet of Things
+FOSS     Free and Open Source Software
 IR       Intermediate Representation                                         
+IoT      Internet of Things
 JVM      Java Virtual Machine
 OTP      Open Telecom Platform                                               
+PASS     Parallel Activity Specification Schema
+PST      Process Structure Tree
 S-BPM    Subject-oriented Business Process Management                        
 SBD      Subject Behaviour Diagram                                           
 SID      Subject Interaction Diagram                                         

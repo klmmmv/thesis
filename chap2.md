@@ -4,32 +4,30 @@ As every Business Process Management method addresses the business and the
 technical aspect of an organization, so does S-BPM. Therefore it has to tackle
 the business' processes for all its stakeholders, to support every employee to
 fulfill his or her job [@bucher:2009]. This means that it depicts a process from the
-view of every participant. As @fleischmann:2010 states:
+view of every participant. As Fleischmann et al. [@fleischmann:2010] state:
 
 > S-BPM is a role-centric and communication-centric tool for the development
 > of organizations. [...] It does not put the development of functional processes
 > in the foreground, but [...] the subjects and their interactions.
 
-So S-BPM heavily focuses on the people who live in the processes and
-actually are part of it. They shall be empowered to actively partake, not only in
+S-BPM heavily focuses on the people who participate in the processes. They shall be empowered to actively partake, not only in
 the work which has to be done at their position, but also in the continuous
 life-cycle of a process (see +@fig:s-bpm-life-cycle ).
 S-BPM tries to succeed in this empowerment of employees, by providing the most
 simple possible modeling language.
 
-![S-BPM life-cycle](images/lifecycle.pdf){#fig:s-bpm-life-cycle}
+![S-BPM life-cycle](images/print/lifecycle.pdf){#fig:s-bpm-life-cycle}
 
 Of course, work performers are not the only employees who continuously develop
-a process. All of the roles in a S-BPM process are described in chapter [S-BPM
+a process. Further important roles within a S-BPM process are described in chapter [S-BPM
 stakeholder](#s-bpm-process).
-
 
 In S-BPM a process is simply thought as consecutive actions of subjects which
 communicate over messages. So it is similar to other common modeling languages
 where you have basic shapes representing some entity, control flows and some form
 of interaction among those entities.
 
-But the spirit of S-BPM is to be as simple as possible and keep ambiguities on
+But the spirit of S-BPM is to be as simple as possible and to keep ambiguities on
 purpose. It does not try to enable people to model a complete or error proof scenario
 of real world problems. It puts the human subject in the middle and knows about
 practical flaws of humans.
@@ -52,7 +50,7 @@ set of shapes to model a process (see [Modeling constructs](#constructs)).
 Subjects interact through messages, which can be a simple "ping" message,
 a complex data object (see [Business Objects](#bo)) or physical assets.
 
-## Subject, predicate, object
+## Subject, Predicate, Object
 
 As mentioned above, one of the main ideas of S-BPM is to enable every worker to
 model and improve business processes themselves. This raises the need for
@@ -73,7 +71,7 @@ formalizable parts of the sentence, which will be needed to construct a
 thorough model.
 
 
-## S-BPM Process {#s-bpm-process}
+## The S-BPM Process {#s-bpm-process}
 
 > An S-BPM process (short process) is defined as set of agents each of which is
 > equipped with an Subject Behaviour Diagram (SBD) so that the process behavior can be defined by the
@@ -83,17 +81,19 @@ thorough model.
 There is a distinction between S-BPM process models and S-BPM process
 instances. While the model represents the general behaviour of participating
 parties and how a business transaction is managed. A process instance is
-a concrete occurrence of the process described and contain data like actors,
-activities, affected business objects and messages[@fleischmann:2010].
+a concrete occurrence of the process described and contains data like actors,
+activities, affected business objects and messages [@fleischmann:2010].
 
 Actors are instantiated subjects. While a subject is the blueprint of a work
 performer, actors or agents are real world entities, which take the role of a
 subject in an ongoing process.
 
 To better illustrate that circumstance, the ordinary legislative procedure of 
-the European Union[^eu-procedure] shall be used (see +@fig:legislative). 
+the European Union[^eu-procedure] shall be used (see +@fig:legislative). The
+grey rectangular in this figure is the business object, which in this case
+is the proposal. Business objects will be discussed later on.
 
-![The ordinary legislative procedure in the EU](images/legislative_process.png){#fig:legislative .class width=395 height=299}
+![The ordinary legislative procedure in the EU](images/print/legislative_process.pdf){#fig:legislative .class width=395 height=299}
 
 The first step of the procedure is a subject
 which submits a proposal to the European Commission. In this figure a general subject called
@@ -108,8 +108,8 @@ an agent who is able to take the role of the "proposer" may be one of the follow
 
 Then the European Commission checks the formal validity of the proposal.
 If positive, the commission forwards the proposal to the parliament which may adopt or amend it.
-After the rehearsal of the parliament the European Council is able to adopt or amend the parliaments
-edited version. If the council accepted the proposal, it is able to be signed and therefore applicable 
+After the rehearsal of the parliament, the European Council is able to adopt or amend the parliaments
+edited version. If the council accepts the proposal, it is able to be signed and therefore applicable 
 law. 
 
 
@@ -180,35 +180,48 @@ European Investmentbank  external
 Table: Set-up of internal and external subjects {#tbl:subjects}
 
 
-Business Process Management methods usually have a cultural aspect to it.
-Meaning, that the process development method is not limited to a technical and
-functional point of view. But it also tries to implement a business culture
+Business Process Management methods usually have a cultural aspect to it,
+meaning, that the process development method is not limited to a technical and
+functional point of view. In fact, it tries to implement a business culture
 which is embedded into a BPM. 
-In S-BPM one way of enforcing this, is to specify certain roles of stakeholders,
+In S-BPM one way of enforcing this is to specify certain roles of stakeholders,
 which actively take part in the process development life-cycle. Fleischmann et al.
 [@fleischmann:2010] specified four roles: 
 
 1. A **governor** mainly is responsible for the environmental factors of
    a process. He is the interface between executive officers and the operational
-   businuess. The governor should always have the big picture in mind when
+   business. The governor should always have the big picture in mind when
    tackling certain problems.
 2. **Actors** are the subjects as mentioned above. They run work processes and
    identify problems or weaknesses in current process models. They know best,
    how certain parts of processes actually are executed.
-3. **Experts** represent specialists in specicfic fields, as the name indicates.
+3. **Experts** represent specialists in specific fields, as the name indicates.
    They consult the other roles for certain recognized problems.
 4. **Facilitators** are the "glue of the process environment". They usually are
    represented by project managers, coaches or members of middle management.
    Their role is to manage the communications of all roles and consult
    additional experts or actors when needed.
 
+Those are roles which also exist in different management paradigms, but with different names.
 
-## Modeling constructs {#constructs}
+## Modeling Constructs {#constructs}
 
-As S-BPM tries to be as simple as possible, there are only a few modeling
-constructs, which build the S-BPM modeling language. 
+Since S-BPM tries to be as simple as possible, there are only a few modeling
+constructs which build the S-BPM modeling language. The whole modeling language
+is based on the Parallel Activity Specification Schema (PASS). According to Elstermann et al. [@pass1]
+"it has been effectively applied to capture the requirements for business process management in several domains", and
+further it "has been proven to be well understandable and considered to be appropriate
+to capture and model the essence of processes".
 
-### Basic shapes in S-BPM
+The graphical notation has not been standardized so far, though steps towards standardization
+have been made in research by Elstermann et al. in [@pass1] and [@pass2]. The notation can also be 
+downloaded as a Microsoft Visual plugin [^visio-plugin]. The shapes in this thesis
+are loosely based on the aforementioned work and on Fleischmanns et al. [@fleischmann:2010].
+
+[^visio-plugin]: At https://subjective-me.jimdo.com/visio-modelling/ you can download the
+  plugin. Additionally there is a tutorial on how to use the plugin in Visio.
+
+### Basic Shapes in S-BPM
 
 Obviously, the subject is
 the main focus of the language and is represented with a simple rectangular
@@ -238,7 +251,7 @@ e. A function state.
 
 ![Shapes for constructing the behaviour of a subject](images/constructs.png){#fig:constructs .class width=448 height=277}
 
-### Subject behaviour {#s-behaviour}
+### Subject Behaviour {#s-behaviour}
 
 A subject performs different kind of actions in a specific order. This action 
 sequence in a S-BPM process tells a subject what it has to do and when.
@@ -246,7 +259,7 @@ The complete description of actions of a subject is called subject behaviour.
 
 A subject is always in one specific state which describes a subjects current
 situation. Meaning that it tells what a subject is or should be doing
-right now. [@fleischmann:2010, page 196] states:
+right now. Fleischmann et al. [@fleischmann:2010, page 196] state:
 
 > In S-BPM, work performers are equipped with elementary tasks to model their
 > work procedures: sending and receiving messages and immediate accomplishment
@@ -268,9 +281,9 @@ Receive state         ![Subject](images/receive_state.png){.class height=57}
 : The different kinds of states of a subject {#tbl:s-behaviour}
 
 
-### Communication between subjects
+### Communication between Subjects
 
-As stated by [@fleischmann:2010] in the beginning of this chapter,
+As stated by Fleischmann et al. [@fleischmann:2010] in the beginning of this chapter,
 S-BPM is a role-centric and communication-centric tool for the development of
 organizations. Which means there are two main points of view for looking at
 business processes and describing them. The subjects and equally important the
@@ -293,7 +306,7 @@ state with the following code:
 
 ~~~{.pseudo .numberLines caption="Pseudo-code for defining a state of a subject"}
 if cond1 then action1
-elseif cond1 then action2
+elseif cond2 then action2
 ~~~
 
 To view every state of a subject as a set of arbitrary conditions and according
@@ -357,7 +370,7 @@ name of the macro. A macro therefore, only shows the most important part: its in
 
 Business Objects are structured objects which can be sent along with messages.
 Each BO has a name and a specififc content and the business object itself can
-be seen as the payload of each message. [@fleischmann:2010, p. 181]
+be seen as the payload of each message. Fleischmann et al. [@fleischmann:2010]
 defines business objects as physical and logical "things" that are required to
 process business transactions. According to him they can be considered as data
 structures composed of several basic data types or other such data structures.
@@ -389,12 +402,12 @@ The overall structure of a BO may change during process execution. This is
 more efficient and easier to work with for the subjects. Additionally it also enables
 data protection inside an organisation to fulfill compliance.
 
-Krauthausen et. al. [@krauthausen:2012] presents a different kind of view on BOs, by introducing a
+Krauthausen et al. [@krauthausen:2012] presents a different kind of view on BOs, by introducing a
 "Top-Down"-approach as a starting point to identify business requirements. He
 states that tasks can be described very well when you refer to the items which
 should be the result of the task. These items are the BOs and are at the very
 center of every action in a business process.
-According to [@krauthausen:2012] a BO is therefore a well defined entity of business activities which must be treated in a specific way.
+According to Krauthausen et al. [@krauthausen:2012] a BO is therefore a well defined entity of business activities which must be treated in a specific way.
 
 In conclusion it is important to note, that because of the aforementioned
 characteristics of a BO, every BO has its own well defined life cycle. During
@@ -434,7 +447,7 @@ Global Business Objects
 : A global BO is stored in a central database. Every subject of a business process
   is able to access this BO in the database. This BO is shared among every subject across a complex process network.
 
-## Conclusion of S-BPM
+## Conclusions of S-BPM
 
 S-BPM is all about subjects and the communication among them. This becomes evident
 when you look at the outcome of a process model done with S-BPM. First you have the

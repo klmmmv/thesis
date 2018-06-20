@@ -200,7 +200,8 @@ the following:
 - $q_2$ is the state where a 0 has been read and the incoming symbol is a 1. This transforms
   the automatas state into the accepting state ($q_1$).
 
-According to this we can define the transition table:
+According to this we can define the transition table (the $\ast$ symbol, 
+  marks the accepting state and \rightarrow the initial state):
 
  current state         0       1
 ------------------- ------- -------
@@ -208,8 +209,7 @@ According to this we can define the transition table:
  $\ast q_1$          $q_1$   $q_1$
  $q_2$               $q_2$   $q_1$
 
-Table: Transition table for a simple FSM. The $\ast$ symbol, 
-  marks the accepting state and \rightarrow the initial state {#tbl:transition}
+Table: Transition table for a simple FSM. {#tbl:transition}
 
 A transition function in FSM only accepts two parameters: the current state and the symbol which has been read.
 According to this transition table we get the following transition functions:

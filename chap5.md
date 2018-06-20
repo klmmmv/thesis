@@ -20,7 +20,7 @@ enables us to automatically verify and execute processes. Validating a BP
 still requires manual work. Based on those techniques we are able to model
 a BP with a software tool and ---upon correct modeling --- instantiate a 
 technical process in a runtime. 
-The theoretical foundation for the following ASM-interpreter is taken from [@fleischmann:2010] and [@boerger:2003].
+The foundation for the ASM-interpreter is taken from [@fleischmann:2010] and [@boerger:2003].
 
 ## SBDs and SIDs as directed graphs {#graphs}
 
@@ -32,36 +32,9 @@ possible entry- and exit-edges. Those edges lead to the next node (state).
 To model and implement the transition from one node to another, we bind guards
 or conditions to the entry- and exit-edges. 
 Therefore every node has a set of edges and functions which select one of the
-edges as entry or exit. +@fig:node depicts a single node
+edges as entry or exit, depending on the entry or exit condition. +@fig:node depicts a single node
 
-![A node according to graph theory](images/node.eps){#fig:node}
-
-elixir processes don't share anything with other processes when being executed. 
-Supervisors are the common way to handle errors and execution problems,
-by restarting them, instead of handling every exception.
-Therefore it is important to define a clean initialization function and,
-when restarting a process, bring the crashed process into its last working
-state. As processes are the way to keep state in elixir applications, yet 
-another process will be used for state tracking of the processes.
-
-This behaviour leads to a certain design decision for elixir applications,
-and the S-BPM virtual machine, which enables and improves the fault tolerance
-of such a system.
-While there needs to be one centralized instance which keeps track of the state
-of every S-BPM-process, executing subjects (also an elixir process) may be running
-on any available Erlang node in the network. Again, this network may span over company
-boundaries.
-The advantage of this architecture is that a subject or even a whole S-BPM-process supervisor
-is able to crash as long as the state process is being kept intact.
-
-The elixir project visualixir[^visualixir] , is able to give a complete overview of every process
-and beam node of an application. There is also a feature to trace all messages sent by
-processes. Therefore it is a good debugging tool for S-BPM processes executed
-in the process VM.
-
-![Visualizing all elixir processes from all beam nodes of the application](images/visualixir.png)
-
-[^visualixir]: See https://github.com/koudelka/visualixir for further documentation.
+![A node according to graph theory](images/node.png){#fig:node}
 
 ## Elixir, a modern functional programming language
 
@@ -159,6 +132,27 @@ have been published.
 
 ![A process overview of a blank phoniex web application.](images/webapp.png){#fig:vis .class}
 
+elixir processes don't share anything with other processes when being executed. 
+Supervisors are the common way to handle errors and execution problems,
+by restarting them, instead of handling every exception.
+Therefore it is important to define a clean initialization function and,
+when restarting a process, bring the crashed process into its last working
+state. As processes are the way to keep state in elixir applications, yet 
+another process will be used for state tracking of the processes.
+
+This behaviour leads to a certain design decision for elixir applications,
+and the S-BPM virtual machine, which enables and improves the fault tolerance
+of such a system.
+While there needs to be one centralized instance which keeps track of the state
+of every S-BPM-process, executing subjects (also an elixir process) may be running
+on any available Erlang node in the network. Again, this network may span over company
+boundaries.
+The advantage of this architecture is that a subject or even a whole S-BPM-process supervisor
+is able to crash as long as the state process is being kept intact.
+This paradigm of supervisors inside a supervision tree is very common in elixir aplpications (see +@fig:supervision-tree).
+
+![The supervision tree of processes](images/supervision-tree.pdf){#fig:supervision-tree}
+
 As it was stated earlier, the concurrency model is the same as you can find in an 
 SID like in +@fig:legislative, chapter 2. So the agents are sending each other messages
 and can execute tasks. A very basic implementation of a elixir process may look like 
@@ -220,7 +214,9 @@ It is a very important part of enabling distributed, scalable and fault tolerant
 In conjunction with the paradigm of many small processes, distribution and concurrency are
 relatively easy to implement and maintain.
 
-Metaprogramming
+
+
+Metaprogramming {#metaprogramming}
 --------------------------------------------------------------------------------
 
 Metaprogramming can be simply described as code which writes code [@mccord:2015].
@@ -251,8 +247,8 @@ a script, which will print the numbers from 1 to 1337. It consists exactly of
     echo 1337 
 ~~~
 
-Most programming languages represent the source code internally with an Abstract
-Syntax Tree (AST)[^ast]. Jones[-@jones:2003] gives a precise definition of the AST:
+Most programming languages represent the source code internally with an 
+AST[^ast]. Jones[-@jones:2003] gives a precise definition of the AST:
 
 
 > An abstract syntax tree captures the essential structure of the input in
@@ -300,8 +296,6 @@ a function which can be found in the `Kernel`{.elixir} module. The
 default macros and functions Elixir imports into the environment
 [^source-elixir].
 
-***TODO:*** add AST as graphic with expressions,
-
 ~~~{.elixir .numberLines language=Elixir caption="A more complex statement being quoted"}
 quote do: if (2 + 3 == 5), do: IO.puts("2 + 3 = 5")
 ~~~
@@ -322,36 +316,6 @@ quote do: if (2 + 3 == 5), do: IO.puts("2 + 3 = 5")
 
 Elixirs macros work differently than for example C/C++ macros, which work with
 pure text. Elixir macros on the other hand work on ASTs.
-
-- Metaprogramming
-- generative programming
-- multistage rogramming
-
-Mathematical calculi for modeling complex systems
---------------------------------------------------------------------------------
-
-There have been different standards for modeling business processes, like the
-BPMN. But they showed that there is still a large gap between the business
-modeling and definition method and the technical implementation. While the
-first is a very abstract understanding of processes, the latter must be
-a detailed fine-grained execution behaviour of software systems
-[@boerger-fleischmann:2015].
-
-It must be ensued that the code does, what the requirements - which may be in the form of informal documents- describe.
-
-Communication problem
-
-: Definition 1
-
-Verification problem
-
-: Definition 2
-
-Validation problem
-
-: Definition 4
-
-### Abstract State Machines
 
 
 

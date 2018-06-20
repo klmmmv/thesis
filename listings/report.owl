@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+   <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+   <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+   <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+   <!ENTITY abstract-pass-ont "http://www.imi.kit.edu/abstract-pass-ont#" >
+   <!ENTITY standard-pass-ont "http://www.imi.kit.edu/standard-pass-ont#" >
+   <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+<rdf:RDF xmlns:abstract-pass-ont="http://www.imi.kit.edu/abstract-pass-ont#" xmlns:standard-pass-ont="http://www.imi.kit.edu/standard-pass-ont#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://www.imi.kit.edu/s-bpm/exampleProcess">
+   <owl:Ontology rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess">
+       <owl:imports rdf:resource="http://www.imi.kit.edu/abstract-pass-ont"></owl:imports>
+       <owl:imports rdf:resource="http://www.imi.kit.edu/standard-pass-ont"></owl:imports>
+   </owl:Ontology>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#report" >
+      <rdf:type rdf:resource="&standard-pass-ont;PASSProcessModel" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >Layer_0</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >report</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_eb04a537-a415-44a0-a6dd-3465f4bf358c" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#message_sztunr19j" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_messageConnector_460_19d46979-c6e5-40ff-85fc-05b052b8d257_message_sztunr19j" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#message_a6502haqo" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_messageConnector_460_e6211e2a-715a-404a-9d25-ef355ce2b5f5_message_a6502haqo" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_subject_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_subject_eb04a537-a415-44a0-a6dd-3465f4bf358c" ></standard-pass-ont:hasModelComponent>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SID" >
+      <rdf:type rdf:resource="&standard-pass-ont;Layer" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SID</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >SID</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_eb04a537-a415-44a0-a6dd-3465f4bf358c" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#message_sztunr19j" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_messageConnector_460_19d46979-c6e5-40ff-85fc-05b052b8d257_message_sztunr19j" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#message_a6502haqo" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_messageConnector_460_e6211e2a-715a-404a-9d25-ef355ce2b5f5_message_a6502haqo" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_subject_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" ></standard-pass-ont:hasModelComponent>
+      <standard-pass-ont:hasModelComponent rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_subject_eb04a537-a415-44a0-a6dd-3465f4bf358c" ></standard-pass-ont:hasModelComponent>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" >
+      <rdf:type rdf:resource="&standard-pass-ont;SingleActor" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SID_subject_19db8e67-a1eb-4371-87fd-d2e916d8ae8b</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >subj1</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasBehavior rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" ></standard-pass-ont:hasBehavior>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" >
+      <rdf:type rdf:resource="&standard-pass-ont;SingleActor" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >subj2</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasBehavior rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" ></standard-pass-ont:hasBehavior>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_eb04a537-a415-44a0-a6dd-3465f4bf358c" >
+      <rdf:type rdf:resource="&standard-pass-ont;SingleActor" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SID_subject_eb04a537-a415-44a0-a6dd-3465f4bf358c</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >subj1</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasBehavior rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_eb04a537-a415-44a0-a6dd-3465f4bf358c" ></standard-pass-ont:hasBehavior>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#message_sztunr19j" >
+      <rdf:type rdf:resource="&standard-pass-ont;MessageSpec" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >message_sztunr19j</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >msg1</standard-pass-ont:hasModelComponentLable>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_messageConnector_460_19d46979-c6e5-40ff-85fc-05b052b8d257_message_sztunr19j" >
+      <rdf:type rdf:resource="&standard-pass-ont;StandardMessageExchange" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SID_messageConnector_460_19d46979-c6e5-40ff-85fc-05b052b8d257_message_sztunr19j</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >Message:msg1 From: SID_subjecteb04a537-a415-44a0-a6dd-3465f4bf358c To: SID_subjectad062130-41c9-42f9-9dbe-5fd7c9f7852b</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasSender rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_eb04a537-a415-44a0-a6dd-3465f4bf358c" ></standard-pass-ont:hasSender>
+      <standard-pass-ont:hasReceiver rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" ></standard-pass-ont:hasReceiver>
+      <standard-pass-ont:hasMessageType rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#message_sztunr19j" ></standard-pass-ont:hasMessageType>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#message_a6502haqo" >
+      <rdf:type rdf:resource="&standard-pass-ont;MessageSpec" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >message_a6502haqo</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >msg2</standard-pass-ont:hasModelComponentLable>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_messageConnector_460_e6211e2a-715a-404a-9d25-ef355ce2b5f5_message_a6502haqo" >
+      <rdf:type rdf:resource="&standard-pass-ont;StandardMessageExchange" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SID_messageConnector_460_e6211e2a-715a-404a-9d25-ef355ce2b5f5_message_a6502haqo</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >Message:msg2 From: SID_subjectad062130-41c9-42f9-9dbe-5fd7c9f7852b To: SID_subject19db8e67-a1eb-4371-87fd-d2e916d8ae8b</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasSender rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" ></standard-pass-ont:hasSender>
+      <standard-pass-ont:hasReceiver rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_subject_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" ></standard-pass-ont:hasReceiver>
+      <standard-pass-ont:hasMessageType rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#message_a6502haqo" ></standard-pass-ont:hasMessageType>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_19db8e67-a1eb-4371-87fd-d2e916d8ae8b" >
+      <rdf:type rdf:resource="&standard-pass-ont;Behavior" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_SID_19db8e67-a1eb-4371-87fd-d2e916d8ae8b</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >SBD: subj1</standard-pass-ont:hasModelComponentLable>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_ad062130-41c9-42f9-9dbe-5fd7c9f7852b" >
+      <rdf:type rdf:resource="&standard-pass-ont;Behavior" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_SID_ad062130-41c9-42f9-9dbe-5fd7c9f7852b</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >SBD: subj2</standard-pass-ont:hasModelComponentLable>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_SID_eb04a537-a415-44a0-a6dd-3465f4bf358c" >
+      <rdf:type rdf:resource="&standard-pass-ont;Behavior" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_SID_eb04a537-a415-44a0-a6dd-3465f4bf358c</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >SBD: subj1</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasEndState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b5f52aaf-8070-432c-af89-bc6708d3cc3e" ></standard-pass-ont:hasEndState>
+      <standard-pass-ont:hasState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b5f52aaf-8070-432c-af89-bc6708d3cc3e" ></standard-pass-ont:hasState>
+      <standard-pass-ont:hasState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_0d792e79-4728-433b-aa18-888abeb78725" ></standard-pass-ont:hasState>
+      <standard-pass-ont:hasInitialState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b61f19b0-59eb-4020-bf4d-543bc4c67fd7" ></standard-pass-ont:hasInitialState>
+      <standard-pass-ont:hasState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b61f19b0-59eb-4020-bf4d-543bc4c67fd7" ></standard-pass-ont:hasState>
+      <standard-pass-ont:hasEdge rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_edge_0d817811-a74e-440b-b46a-18dcbd1b1743" ></standard-pass-ont:hasEdge>
+      <standard-pass-ont:hasEdge rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_edge_c19c7a56-a3a7-4193-809b-c0d2b3f40d8a" ></standard-pass-ont:hasEdge>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b5f52aaf-8070-432c-af89-bc6708d3cc3e" >
+      <rdf:type rdf:resource="&standard-pass-ont;ReceiveState" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_state_b5f52aaf-8070-432c-af89-bc6708d3cc3e</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >Receive</standard-pass-ont:hasModelComponentLable>
+      <rdf:type rdf:resource="&standard-pass-ont;EndState" ></rdf:type>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_0d792e79-4728-433b-aa18-888abeb78725" >
+      <rdf:type rdf:resource="&standard-pass-ont;SendState" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_state_0d792e79-4728-433b-aa18-888abeb78725</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >Send report</standard-pass-ont:hasModelComponentLable>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b61f19b0-59eb-4020-bf4d-543bc4c67fd7" >
+      <rdf:type rdf:resource="&standard-pass-ont;FunctionState" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_state_b61f19b0-59eb-4020-bf4d-543bc4c67fd7</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >write report</standard-pass-ont:hasModelComponentLable>
+      <rdf:type rdf:resource="&standard-pass-ont;InitialState" ></rdf:type>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_edge_0d817811-a74e-440b-b46a-18dcbd1b1743" >
+      <rdf:type rdf:resource="&standard-pass-ont;StandardTransition" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_edge_0d817811-a74e-440b-b46a-18dcbd1b1743</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >write report done</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasSourceState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b61f19b0-59eb-4020-bf4d-543bc4c67fd7" ></standard-pass-ont:hasSourceState>
+      <standard-pass-ont:hasTargetState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_0d792e79-4728-433b-aa18-888abeb78725" ></standard-pass-ont:hasTargetState>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_edge_c19c7a56-a3a7-4193-809b-c0d2b3f40d8a" >
+      <rdf:type rdf:resource="&standard-pass-ont;SendTransition" ></rdf:type>
+      <standard-pass-ont:hasModelComponentID rdf:datatype="&xsd;string" >SBD_edge_c19c7a56-a3a7-4193-809b-c0d2b3f40d8a</standard-pass-ont:hasModelComponentID>
+      <standard-pass-ont:hasModelComponentLable xml:lang="en" >To: subj1 Msg: msg2</standard-pass-ont:hasModelComponentLable>
+      <standard-pass-ont:hasSourceState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_0d792e79-4728-433b-aa18-888abeb78725" ></standard-pass-ont:hasSourceState>
+      <standard-pass-ont:hasTargetState rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SBD_state_b5f52aaf-8070-432c-af89-bc6708d3cc3e" ></standard-pass-ont:hasTargetState>
+      <standard-pass-ont:refersTo rdf:resource="http://www.imi.kit.edu/s-bpm/exampleProcess#SID_messageConnector_460_e6211e2a-715a-404a-9d25-ef355ce2b5f5_message_a6502haqo" ></standard-pass-ont:refersTo>
+  </owl:NamedIndividual>
+
+</rdf:RDF>

@@ -16,3 +16,9 @@ Actions
 
 Memory location in Finite State Machines (FSM) are the *in*, *out* and *ctl_state* variables.
 In ASMs they are of arbitrary expressions of arbitrary types.
+
+- Metaprogramming
+- generative programming
+- multistage rogramming
+
+

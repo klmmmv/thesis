@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg5551"
+   width="526.66669"
+   height="398.66666"
+   viewBox="0 0 526.66669 398.66666"
+   sodipodi:docname="lifecycle.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata5557">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5555" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1136"
+     id="namedview5553"
+     showgrid="false"
+     inkscape:zoom="1.9765822"
+     inkscape:cx="282.8527"
+     inkscape:cy="232.85023"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5551" />
+  <ellipse
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+     id="path5858"
+     cx="271.17517"
+     cy="180.86646"
+     rx="147.72975"
+     ry="91.319244" />
+  <rect
+     style="fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:1.62521398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5561-9"
+     width="113.85696"
+     height="68.866676"
+     x="216.66898"
+     y="41.62495"
+     ry="2.4457345" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+     x="247.69121"
+     y="80.323914"
+     id="text5567-2"><tspan
+       sodipodi:role="line"
+       id="tspan5856"
+       x="247.69121"
+       y="80.323914">Analysis</tspan></text>
+  <rect
+     style="fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:1.62521398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5561-9-4"
+     width="113.85696"
+     height="68.866676"
+     x="360.61472"
+     y="66.814163"
+     ry="2.4457345" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+     x="386.12521"
+     y="105.42719"
+     id="text5567-2-6"><tspan
+       sodipodi:role="line"
+       id="tspan5943"
+       x="386.12521"
+       y="105.42719">Modeling</tspan></text>
+  <rect
+     style="fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:1.62521398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5561-9-0"
+     width="113.85696"
+     height="68.866676"
+     x="371.47052"
+     y="154.22755"
+     ry="2.4457345" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+     x="396.41071"
+     y="194.15698"
+     id="text5567-2-2"><tspan
+       sodipodi:role="line"
+       id="tspan5945"
+       x="396.41071"
+       y="194.15698">Validation</tspan></text>
+  <rect
+     style="fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:1.62521398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5561-9-8"
+     width="113.85696"
+     height="68.866676"
+     x="304.40146"
+     y="240.75793"
+     ry="2.4457345" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+     x="319.72446"
+     y="279.43347"
+     id="text5567-2-9"><tspan
+       sodipodi:role="line"
+       id="tspan5947"
+       x="319.72446"
+       y="279.43347">Optimization</tspan></text>
+  <rect
+     style="fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:1.62521398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5561-9-3"
+     width="113.85696"
+     height="68.866676"
+     x="121.2794"
+     y="241.24001"
+     ry="2.4457345" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+     x="178.26648"
+     y="259.91553"
+     id="text5567-2-7"><tspan
+       sodipodi:role="line"
+       id="tspan5949"
+       x="178.26648"
+       y="259.91553">Organization</tspan><tspan
+       sodipodi:role="line"
+       id="tspan5951"
+       x="178.26648"
+       y="279.91553">specific</tspan><tspan
+       sodipodi:role="line"
+       id="tspan5953"
+       x="178.26648"
+       y="299.91553">implementation</tspan></text>
+  <rect
+     style="fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:1.62521398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5561-9-1"
+     width="113.85696"
+     height="68.866676"
+     x="76.87236"
+     y="66.750122"
+     ry="2.4457345" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+     x="96.742249"
+     y="105.31236"
+     id="text5567-2-05"><tspan
+       sodipodi:role="line"
+       id="tspan5941"
+       x="96.742249"
+       y="105.31236">Monitoring</tspan></text>
+  <rect
+     style="fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:1.62521398;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5561-9-5"
+     width="113.85696"
+     height="68.866676"
+     x="63.939911"
+     y="154.72835"
+     ry="2.4457345" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+     x="120.92699"
+     y="183.00543"
+     id="text5567-2-07"><tspan
+       sodipodi:role="line"
+       id="tspan5957"
+       x="122.73949"
+       y="183.00543">IT </tspan><tspan
+       sodipodi:role="line"
+       id="tspan5959"
+       x="120.92699"
+       y="203.00543">implementation</tspan></text>
+</svg>

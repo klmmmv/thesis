@@ -43,11 +43,11 @@ it is know typically in the process life cycle:
 He also states, that the biggest lack in todays BPMS is the execution of processes.
 
 
-A general approach
+From Abstract Syntax Trees to Process Structure Trees
 --------------------------------------------------------------------------------
 
 To realize the aforementioned system and guarantee its overall functionality,
-[@prinz:2014] proposes an architecture which consists of two main parts. A
+[@prinz:2015] proposes an architecture which consists of two main parts. A
 compiler and a virtual machine, as it can be seen in +@fig:compiler-engine .
 
 ![A compiler engine overview [@prinz:2015]](images/compiler-engine.png){#fig:compiler-engine}
@@ -62,11 +62,20 @@ This figure consists of three main parts:
 - a process-engine which represents the virtual machine, and is able to
   directly instantiate processes from the IR.
 
+Though they add, that the whole system consists of four subsystems for implementing
+a "general overall BPM system". The remaining fourth subsystem being an error handler,
+which detects errors in process models and proposes corrections if possible.
+
 It can questioned if the phrases "compiler" and "virtual machine" are well
-fitted to describe the system. Lets first look at the compiler side. In Prinz'
-and Singers proposal and refinements, there is a compiler-like application which
+fitted to describe the system. Lets first look at the compiler side. 
+
+[@prinz:2014] et al. call the two main sides--- the IR is placed at the exact border between both sides---
+the producer and consumer side. In compiler theory those terms equal to frontend and backend.
+
+
+In Prinz' and Singers proposal and refinements, there is a compiler-like application which
 parses, transforms and semantically analyzes the given process model. Which does
-not resemble a complete and proper compiler. Though, a compiler is composed of
+not resemble a complete and proper compiler. Though conventially, a compiler is composed of
 two main phases which can be differentiated into several other phases
 [see @grundlagen]: The analysis and the synthesis. While the analytical
 phase(usually also known as the compiler-frontend) consists of a lexical,
@@ -74,11 +83,38 @@ syntactic and semantic analysis. The second phase (compiler-backend) consists of
 an intermediate code generator a code optimizer and a final code generator. The
 overall structure can be seen in +@fig:compiler 
 
-![compiler](images/compiler.png){#fig:compiler #id .class width=462px height=345px}
+![One way of a conventional compiler.](images/compiler.png){#fig:compiler}
+
+This typical design, has some major disadvantages though. If you want to support
+several source languages on several platforms, you would need $n * m$ ($n$ being the amount of
+source languages and $m$ the amount of target architectures) compilers.
+Of course, many proprietary developers do not need to apply to that circumstances, if they
+choose not to, depending on their business model. But especially in Free and 
+Open Source Software (FOSS) a different approach is needed. Not only for
+interoperability, but also because of resources. Like software developers, who are
+only experts in one specific programming language and have no expertise in CPU
+architecture design and instruction sets. Or the opposite of that.
+For this reason, it becomes obvious that another approach should be used. This is done
+by introducing an IR of programming languages, just like stated before.
+
+In the case of programming language that is the Abstract Syntax Tree (AST). This topic
+will be handled in detail in [chapter 5](#metaprogramming). [@prinz:2014] in contrast, 
+calls the analogous form in a BPM environment the Process Structure Tree.
+
+The llvm project, uses such an architecture, for the whole llvm framework. It consists of many low 
+level libraries for compiling from different languages to different architectures [@llvm]. This is
+crucial for an open development process, where many developers want to implement new programming languages
+on many platforms.
+The whole llvm architecture consists of 3 main phases (see +@fig:3phase-compiler). 
+Besides the frontend and backend, there is also a middleend which usually implements
+an optimization process of the IR. For example, getting rid of redundant computations.
+
+![The three phase compiler concept like used in the llvm project](images/retargetable_compiler.png){#fig:retargetable-compiler}
+
+The same concept is targeted in recent research, as there are many different modeling languages in use.
 
 ![Overview of the Process VM-architecture concerning the technical implementation with Erlang](images/vmarchitektur.png){#fig:vmarchitecture}
 
-A real world example is the llvm 
 
 Frontend for the architecture
 --------------------------------------------------------------------------------
@@ -117,11 +153,11 @@ engines or other systems for process execution.
 
 For the compiler based virtual machine for S-BPM processes there is a need of an intermediate representation (IR)
 of processes. As there are many modeling tools for business processes, each using its own format, interoperability
-must is the goal of such an IR.
+is a necessity.
 The IR needs to be able to correctly describe the process model in an application and platform agnostic way. The
 subjects, its actions, the communication among the subjects and the message types (along with the business objects),
 have to be reflected in process description in such a way, that the IR depicts the intentional meaning of the process.
-In 2014 [@hoever] et alii first proposed to use ontologies for that matter. 
+In 2014 [@hoever] et al. first proposed to use ontologies for that matter. 
 
 Ontology is a term lent from philosophy, which describes the classification, relation and arrangement of everything there is.
 In computer science it has been used to describe certain things and their relations in knowledge-based systems.
