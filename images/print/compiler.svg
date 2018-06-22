@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="134.7448mm"
+   height="116.81346mm"
+   viewBox="0 0 134.7448 116.81346"
+   version="1.1"
+   id="svg27633"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="compiler.svg">
+  <defs
+     id="defs27627" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="239.2568"
+     inkscape:cy="207.53421"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1136"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata27630">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-35.388693,-31.192114)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33455-0"
+       width="87.705322"
+       height="59.358574"
+       x="82.031288"
+       y="88.25013"
+       ry="2.6458333" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33455"
+       width="87.705322"
+       height="59.358574"
+       x="35.785568"
+       y="31.588989"
+       ry="2.6458333" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33457"
+       width="54.050598"
+       height="8.3154774"
+       x="58.660774"
+       y="59.328606" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33457-6"
+       width="54.050598"
+       height="8.3154774"
+       x="58.680801"
+       y="43.453568" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33457-8"
+       width="54.050598"
+       height="8.3154774"
+       x="58.680801"
+       y="75.203568" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot33480"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,16.036172,6.6817382)"><flowRegion
+         id="flowRegion33482"><rect
+           id="rect33484"
+           width="128.21428"
+           height="40"
+           x="116.42857"
+           y="108.59111" /></flowRegion><flowPara
+         id="flowPara33486"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">Frontend</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot33488"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.9789855,0)"><flowRegion
+         id="flowRegion33490"><rect
+           id="rect33492"
+           width="169.28572"
+           height="21.785715"
+           x="283.92856"
+           y="171.44826" /></flowRegion><flowPara
+         id="flowPara33494">lexical analysis</flowPara></flowRoot>    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,-5.5994363,15.567049)"
+       xml:space="preserve"
+       id="flowRoot33488-8"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+         id="flowRegion33490-3"><rect
+           id="rect33492-3"
+           width="169.28572"
+           height="21.785715"
+           x="283.92856"
+           y="171.44826" /></flowRegion><flowPara
+         id="flowPara33494-6">syntactical analysis</flowPara></flowRoot>    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,-4.3550678,31.253062)"
+       xml:space="preserve"
+       id="flowRoot33488-4"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+         id="flowRegion33490-6"><rect
+           id="rect33492-5"
+           width="169.28572"
+           height="21.785715"
+           x="283.92856"
+           y="171.44826" /></flowRegion><flowPara
+         id="flowPara33494-7">semantic analysis</flowPara></flowRoot>    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33457-7"
+       width="54.050598"
+       height="8.3154774"
+       x="104.90649"
+       y="115.98975" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33457-6-7"
+       width="54.050598"
+       height="8.3154774"
+       x="104.92651"
+       y="100.11471" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect33457-8-4"
+       width="54.050598"
+       height="8.3154774"
+       x="104.92651"
+       y="131.8647" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot33480-7"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,62.281889,63.342878)"><flowRegion
+         id="flowRegion33482-8"><rect
+           id="rect33484-9"
+           width="128.21428"
+           height="40"
+           x="116.42857"
+           y="108.59111" /></flowRegion><flowPara
+         id="flowPara33486-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">Backend</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot33488-9"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,32.053522,56.661139)"><flowRegion
+         id="flowRegion33490-7"><rect
+           id="rect33492-7"
+           width="231.07146"
+           height="22.857149"
+           x="283.92856"
+           y="171.44826" /></flowRegion><flowPara
+         id="flowPara33494-5">intermediate code generator</flowPara></flowRoot>    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,43.998012,72.228188)"
+       xml:space="preserve"
+       id="flowRoot33488-8-4"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+         id="flowRegion33490-3-1"><rect
+           id="rect33492-3-7"
+           width="169.28572"
+           height="21.785715"
+           x="283.92856"
+           y="171.44826" /></flowRegion><flowPara
+         id="flowPara33494-6-3">code optimizer</flowPara></flowRoot>    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,40.328985,87.914204)"
+       xml:space="preserve"
+       id="flowRoot33488-4-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:Carlito;-inkscape-font-specification:'Carlito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+         id="flowRegion33490-6-5"><rect
+           id="rect33492-5-6"
+           width="169.28572"
+           height="21.785715"
+           x="283.92856"
+           y="171.44826" /></flowRegion><flowPara
+         id="flowPara33494-7-2">final code generato</flowPara></flowRoot>  </g>
+</svg>

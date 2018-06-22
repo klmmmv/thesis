@@ -141,7 +141,7 @@ ground model will be produced. Each of those will be verified through manual and
 When the model is detailed enough to be implemented in code, the system can also be validated using
 according test cases.
 
-![ASM-based methods and models](images/asm_models_methods.png){#fig:framework}
+![ASM-based methods and models](images/print/asm_methods.pdf){#fig:framework}
 
 The difference between validation and verification is that the former means:"Are we
 building the right thing?". Whereas the latter means:"Are we building the thing right?".
@@ -291,7 +291,7 @@ Functions
   And shared functions are readable and updatable by the shared functions executing machine, and other
   machines as well.
 
-![Classification of ASM functions, relations, locations [@boerger:2003, pp. 33]](images/asm_functions.pdf){#fig:asmfunctions}
+![Classification of ASM functions, relations, locations [@boerger:2003, pp. 33]](images/print/asm_functions.pdf){#fig:asmfunctions}
 
 ASM states
 
@@ -494,7 +494,7 @@ called $S'$. States of a refined machine are called $S\ast$ and its successor st
 In +@fig:refinement a scheme is depictured to illustrate the relationships of the refined automatas, its states
 and transition steps. 
 
-![The refinement scheme](images/refinement.png){#fig:refinement}
+![The refinement scheme](images/print/refinement.pdf){#fig:refinement}
 
 The importance of this scheme lies in its statement about data in a specific state. Data (or locations)
 in a state $S$ must be the same as in $S*$. This formally declares the equivalence between the corresponding
@@ -560,7 +560,7 @@ which need to be executed so the according state can be reached. Rectangular sha
 to execute ASM submachines.
 The hexagon shape is a simple condition. 
 
-![The notation for a graphical representation of ASMs](images/control-state-asms.png){#fig:control-state-asms}
+![The notation for a graphical representation of ASMs](images/print/control-state-asm.pdf){#fig:control-state-asms}
 
 This control-state ASM can be translated into the usual pseudo-code variation:
 

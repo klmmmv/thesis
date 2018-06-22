@@ -34,7 +34,7 @@ or conditions to the entry- and exit-edges.
 Therefore every node has a set of edges and functions which select one of the
 edges as entry or exit, depending on the entry or exit condition. +@fig:node depicts a single node
 
-![A node according to graph theory](images/node.png){#fig:node}
+![A node according to graph theory](images/print/node.pdf){#fig:node}
 
 ## Elixir, a modern functional programming language
 

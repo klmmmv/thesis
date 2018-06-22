@@ -50,7 +50,7 @@ To realize the aforementioned system and guarantee its overall functionality,
 [@prinz:2015] proposes an architecture which consists of two main parts. A
 compiler and a virtual machine, as it can be seen in +@fig:compiler-engine .
 
-![A compiler engine overview [@prinz:2015]](images/compiler-engine.png){#fig:compiler-engine}
+![A compiler engine overview [@prinz:2015]](images/print/architecture.pdf){#fig:compiler-engine}
 
 This figure consists of three main parts:
 
