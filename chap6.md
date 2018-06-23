@@ -1,4 +1,4 @@
-# Conclusions and Future Work
+# Discussion and Future Work
 
 Above and beyond the topics discussed and proposed in this thesis, I want to emphasize
 the importance of open communities. NGOs and civil organizations who work for global 

@@ -116,7 +116,7 @@ law.
 S-BPM processes can be described through a SBD and
 a Subject Interaction Diagram (SID). There is one SID and one SBD for every
 subject. 
-Those two diagrams suffice to describe a business process completely.
+Those two diagram types suffice to describe a business process completely.
 Both diagrams can be expressed in graphical
 and tabular/textual forms as depicted in +@tbl:sbd (SBD) and +@tbl:sid (SID).
 
@@ -202,7 +202,32 @@ which actively take part in the process development life-cycle. Fleischmann et a
    Their role is to manage the communications of all roles and consult
    additional experts or actors when needed.
 
-Those are roles which also exist in different management paradigms, but with different names.
+Those roles are just one way to look at the business process experts and their responsibilities.
+There are many other roles which are defined by other BPM methods, but all of them have in common
+that they represent some portion of responsibility over at least one phase in the business process
+life cycle. In the Business Process Management Common Body of Knowledge Guide (BPM CBOK) [@bpmcbok] 
+even more roles are listed:
+
+- Business Process Analyst
+- Business Process Engineer
+- Business Process Architect
+- Business Process Manager
+- Business Process Consultant
+- Business Process Manager
+- Business Process Owner
+- Business Analyst
+- Business Systems Analyst
+- Manager or Director of Business Performance Improvement
+- Manager or Director of Business Process Innovation
+- Process Owner
+- Process Officer
+
+So there is no standard way of organizing the tasks and responsibilities in BPM. And as the BPM CBOK
+advises, there are many ways to structure your business process staff and the roles. They may be 
+employees from the IT department, business department or interdisciplinary departments.
+The key factor is "to engage in activities that promote the practice of business process management,
+to develop a common body of knowledge in this field, and to contribute to the advancement and skill
+development of professionals who work in this discipline" [@bpmcbok].
 
 ## Modeling Constructs {#constructs}
 

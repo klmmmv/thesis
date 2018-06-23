@@ -171,9 +171,9 @@ To define an ASM $M$ one has to
 ASMs are enhanced Finite State Machines (FSM). 
 As it is stated in [@pearson:automata] the formal definition of a FSM is a quintuple $M = (Q, \Sigma ,q_{0},\delta ,F)$, where:
 
-- $M$ is the to be described automata,
-- $\Sigma$ is the input alphabet (a finite non-empty set of symbols),
+- $M$ is the to be described automaton,
 - $Q$ is a finite, non-empty set of states,
+- $\Sigma$ is the input alphabet (a finite non-empty set of symbols),
 - $q_{0}$ is an initial state, an element of $Q$,
 - $\delta$ is the state-transition function: $\delta : Q \times \Sigma \rightarrow Q$ and
 - $F$ is the set of final states, a (possibly empty) subset of $Q$.
@@ -181,24 +181,24 @@ As it is stated in [@pearson:automata] the formal definition of a FSM is a quint
 The state-transition function $\delta : Q \times \Sigma \rightarrow Q$ means, that in every state out of $Q$
 with an input symbol out of $\Sigma$, the transition function assigns a follow-up state. 
 
-Beside the notation of automatas with tuples, there are also two other common notations 
+Beside the notation of automaton with tuples, there are also two other common notations 
 which have better readability. One being a tabular representation of all concrete 
 transition functions, like in +@tbl:transition . The other one is a directed graph. The latter
 option will be further explained in [chapter 5](#graphs).
 
 For better understanding of the differences between a FSM and an ASM, a simple FSM shall be used
-as an example. The automata shall accept any combination of words, which contains the string
+as an example. The automaton shall accept any combination of words, which contains the string
 01 and its prefix and suffix may be of any combination of 0 and 1. Therefore accepting words could be
-1000111, 0001111 and 01. Words which will not be accepted by the automata are $\epsilon$ (an empty word), 
+1000111, 0001111 and 01. Words which will not be accepted by the automaton are $\epsilon$ (an empty word), 
 111000 and 0.
 Its alphabet is $\Sigma = \{0, 1\}$. The set of states is $Q = \{q_0, q_1, q_2\}$, where each state means
 the following:
 
-- $q_0$ is the state in which none symbol has been read or the automata has read a 1.
-- $q_1$ is the accepting state. This means the string 01 has been read, and so the automata
+- $q_0$ is the state in which no symbol has been read or the automaton has read a 1.
+- $q_1$ is the accepting state. This means the string 01 has been read, and so the automaton
   will accept any incoming symbol.
 - $q_2$ is the state where a 0 has been read and the incoming symbol is a 1. This transforms
-  the automatas state into the accepting state ($q_1$).
+  the automaton state into the accepting state ($q_1$).
 
 According to this we can define the transition table (the $\ast$ symbol, 
   marks the accepting state and \rightarrow the initial state):
@@ -220,7 +220,7 @@ According to this transition table we get the following transition functions:
 - $\delta(q_2, 0) = q_2$
 - $\delta(q_2, 1) = q_1$
 
-The concrete FSM of the former example can be formalized as the tuple $M = (\{q_0, q_1, q_2\}, \{0, 1\}, \delta, \{q_1\})$.
+The concrete FSM of the former example can be formalized as the tuple $M = (\{q_0, q_1, q_2\}, \{0, 1\}, \{q_0\}, \delta, \{q_1\})$.
 Where $\delta$ is the set of all the aforementioned transition functions.
 
 As most of the literature about ASM is quite limited to mathematicians, the following
@@ -251,6 +251,7 @@ Condition
 Location
 
 : Is a pair of a function name $f$ and arguments $(t_i, ...., t_n)$, where $t_i$ is a term.
+  The tuple of parameters ($(t_1, ..., t_n)$) are often shortened as $a$, like arguments (like in +@tbl:location).
   In ASMs they represent the concept of basic object containers.
   In literature locations are often described as tables like in databases. In this
   "virtual table" you could look up every value, computed by the function with the
@@ -266,8 +267,7 @@ Function name     $a_1$        ...        $a_n$
 -------------------------------------------------
 Table: The location notated as a table. {#tbl:location}
 
-Updates
-
+Update
 : An update is a concrete location-value pair. $f(v_i, ...., v_n) := t$.
   Therefore the update, executes a function, which means that the current state changes.
   To put it in other words, an update is a transition from one state, to another.
@@ -280,7 +280,7 @@ Functions
   which function is executed by which ASM or agent and what kind of accessibility it has.
   When defining the ground model, one needs to understand the different roles of each agent
   and what the agent is allowed to do.
-  Static functions do not depend on the state of the automata and do not change over different
+  Static functions do not depend on the state of the automaton and do not change over different
   runs of the ASM. Dynamic one do the exact opposite and may change as the state of a machine progresses.
   Dynamic functions are further distincted into controlled, in, out and shared functions. In and 
   out functions represent a form of input and output of a machine. We also call the in functions
@@ -491,7 +491,7 @@ the common language.
 
 Formally we call an ASM $M$ and its refined version $M\ast$. We define states $S$ of $M$ which tranform into other states
 called $S'$. States of a refined machine are called $S\ast$ and its successor states $S\ast'$ and so on.
-In +@fig:refinement a scheme is depictured to illustrate the relationships of the refined automatas, its states
+In +@fig:refinement a scheme is depictured to illustrate the relationships of the refined automaton, its states
 and transition steps. 
 
 ![The refinement scheme](images/print/refinement.pdf){#fig:refinement}

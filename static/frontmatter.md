@@ -30,9 +30,10 @@ Graz, 22.06.2018 &  & \tabularnewline \cline{3-3} &  & Michael Valentin Klammer 
 Abbreviations
 ================================================================================
 
-------   -----------------------------------------------------------------------
+-------- -----------------------------------------------------------------------
 ASM      Abstract State Machine
 BPM      Business Process Management                                         
+BPM CBOK Busines Process Management Common Body of Knowledge
 BPMN     Business Process Model and Notation                                 
 BPMS     Business Process Management System                                  
 DBMS     Database Management Systems
@@ -47,7 +48,8 @@ S-BPM    Subject-oriented Business Process Management
 SBD      Subject Behaviour Diagram                                           
 SID      Subject Interaction Diagram                                         
 VHDL     VHSIC Hardware Description Language
-------   -----------------------------------------------------------------------
+-------- -----------------------------------------------------------------------
+
 
 
 

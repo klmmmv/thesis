@@ -1,4 +1,4 @@
-Introduction 
+Motivation 
 ================================================================================
 
 Every organization --- may it be a public institution or a commercial business --- has a certain amount of business processes. Those processes use the
@@ -68,7 +68,7 @@ subjects.
 
 This thesis aims to enhance the concept of this virtual machine for S-BPM processes 
 and propose a method for implementing the execution of processes.
-It especially tries to show how Elixir, on top of the Erlang-VM, is able to
+It especially tries to show how Elixir, on top of the Erlang platform, is able to
 support this approach. 
 
 Further, metaprogramming--- which Elixir is capable of---
@@ -82,7 +82,7 @@ model, will be explained.
 
 In chapter three the concept of abstract state machines (ASM) will be explained.
 ASM is one way of notation to express the execution of algorithms. They have become
-a solid framework for system design and development, with many use cases in the industry
+a solid framework for system design and development, with many use cases in industry
 and research. ASMs are one way of making business processes executable as they have a
 thorough mathematical foundation. They could also be used to model a business process
 in the form of control state machines.
