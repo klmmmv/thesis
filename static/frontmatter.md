@@ -58,27 +58,24 @@ VHDL     VHSIC Hardware Description Language
 Abstract
 ================================================================================
 
-Business process management still faces a lot of problems, like the automatized
+Business process management still faces a lot of problems, such as the automatized
 execution of already modeled processes.
-In recent research a call for research towards a compiler based virtual machine
+In recent literature a call for research towards a compiler based virtual machine
 architecture for business processes was made. A general concept has already been developed
-and is being inspected in this work. Further an interdisciplinary research of the crucial
+and is being inspected in this work. Furthermore, an interdisciplinary research of the crucial
 foundations for this architecture is presented.
 For the automatized execution the Abstract State Machine (ASM) method is being exhibited
 thoroughly, as it is a way to execute algorithms and therefore business processes
-in a formal way. ASMs also enable distributed execution of processes, by using multi-agent
+in a formal way. ASMs also enable distributed execution of processes by using multi-agent
 ASMs.
 
-The thesis also provides a concept on how to implement such a distributed process
-across IT infrastructure and therefore business boundaries. For the execution
+The thesis provides a concept on how to implement such a distributed process
+across IT infrastructure and thus business boundaries. For the execution,
 a quite new programming language, called Elixir, is being used which runs
 on the Erlang platform. The platform is very promising for being used at the
 VM backend.
 
-Though ASMs can be used at the frontend, middleend and backend of the VM architecture,
-this thesis proposes to only use it in the backend. Empirical studies have to be
-made on the usage of ASMs.
-
+Concerning the use of ASM, which is applicable for the frontend as well as the middle end and backend, this thesis, however, proposes to only use it in the backend. 
 
 Kurzfassung
 ================================================================================
