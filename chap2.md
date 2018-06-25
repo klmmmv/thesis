@@ -136,9 +136,13 @@ Table: Subject Behaviour Diagram of the European Parliament {#tbl:sbd}
 ----------------------------------------------------------------
 Nr. Subject            Sends Message        To Subject
 --- ------------------ -------------------- --------------------
-1   Employee           Project Design       Manager
+1   Proposer           proposal             Commission
 
-1   Employee           Project Design       Manager
+2   Commission         formal proposal      Parliament
+
+3   Parliament         rehearsed proposal   Council
+
+4   Council            approved proposal    Parliament
 ----------------------------------------------------------------
 
 Table: Subject Interaction Diagram of the ordinary legislative procedure of the EU {#tbl:sid}
@@ -267,11 +271,11 @@ is the instance, or an actual data-object during runtime.
 In +@fig:constructs a list of every symbol which depict a subjects state of its behaviour
 can be seen. The meaning is as follows:
 
-a. The triangle in the left upper corner represents, that this state is the starting point
+a. The play symbol in the right upper corner represents, that this state is the starting point
    for the subjects which behaviours is being modeled.
-b. The triangle in the right bottom corner represents the end state of the subject.
-c. A send-state.
-d. A receive state.
+b. The stop symbol in the right upper corner represents the end state of the subject.
+c. A receive state.
+d. A send-state.
 e. A function state.
 
 ![Shapes for constructing the behaviour of a subject](images/print/shapes.pdf){#fig:constructs .class}
@@ -380,7 +384,7 @@ portraying reoccurring functions with behaviour macros.
 
 Those reoccurring functions may appear mostly within a subject, but are also able to depict
 functions which span over several subjects. A behaviour macro is very similar
-to a sub-process in BPMN. As the BPMN 2.0 states, a sub-process is an activity
+to a global sub-process in BPMN. As the BPMN 2.0 states, a sub-process is an activity
 that encapsulates a process and once it is instantiated, its elements behave as
 in a normal process [^bpmn].
 A macros graphic representation (see +@fig:macro) is a simple table consisting of three rows. 
@@ -423,10 +427,6 @@ Business objects are processed by subjects and they are crucial for performing
 an output of business processes. They do not cease to exist when a process is
 finished and can be used afterwards.
 
-The overall structure of a BO may change during process execution. This is 
-more efficient and easier to work with for the subjects. Additionally it also enables
-data protection inside an organisation to fulfill compliance.
-
 Krauthausen et al. [@krauthausen:2012] presents a different kind of view on BOs, by introducing a
 "Top-Down"-approach as a starting point to identify business requirements. He
 states that tasks can be described very well when you refer to the items which
@@ -438,22 +438,25 @@ In conclusion it is important to note, that because of the aforementioned
 characteristics of a BO, every BO has its own well defined life cycle. During
 its life cycle --- in an organisations boundaries --- the BO will change, but
 will retains its integrity and identity. Therefore every instance of a BO has
-some sort of ID and will be unique inside an organisation. 
+some sort of ID and will be unique inside an organisation. This simply means
+that an instance of a BO has an association to a process instance.
 
 BOs in S-BPM also support access privileges and different views on BOs. This is
 done with well known read/write access entries in the BOs structure (see +@tbl:readwrite). 
+In the table a fictional example of access privileges of the proposal is given,
+representing the view of the council, the parliament and the commission.
 
----------------------------------------------------------------
-Data element       View of employee View of Human Resources
------------------- ---------------- -------------------------- 
-Name                       R                   R/W
+------------------------------------------------------------------------------
+Data element        View of Council   View of Parliament   View of Commission
+------------------ ----------------- -------------------- -------------------- 
+Initial Proposer           R                 R/W                   R
 
-First name                 R                   R/W
+Affecting bill             R                 R/W                   R
 
-Phone number               R                   R/W
+Article                    R                 R/W                   R
 
-Orga. unit                 R                   R/W
----------------------------------------------------------------
+Body of Proposal           R                 R/W                   R
+------------------------------------------------------------------------------
 
 : Business object views and access privileges {#tbl:readwrite}
 
@@ -481,12 +484,8 @@ partaking subject, which results in the SBD for every subject. Along with a list
 every important subject in a process, you are able to model every possible business
 process.
 
-Because of the intended ambiguous nature of S-BPM, it makes it possible to model
-a process as detailed as it has to be, without caring about every possible 
-possibility in real life scenarios.
-
-The aforementioned outputs of the S-BPM modeling method, are fundamental to understand
-the formalization process, which will be discussed in chapter **TODO**.
+The strong emphasis on the subjects and the communication between them, has changed the paradigm of how to think 
+of business processes. 
 
 [^eu-procedure]: The ordinary legaslative procedure of the EU for evaluating
 a statute: http://www.europarl.europa.eu/external/appendix/legislativeprocedure/europarl_ordinarylegislativeprocedure_howitworks_en.pdf;

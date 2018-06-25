@@ -4,15 +4,13 @@ The Virtual Machine Architecture
 The idea of a Compiler-Virtual Machine based approach of a Business Process
 Execution Platform has first been proposed by Prinz [@prinz:2014 et.al.]. This
 approach has been influenced by the idea of a compiler for business processes by
-[@koehler:2008].The basic idea is to close the gap between a business process model
+[@koehler:2008]. The basic idea is to close the gap between a business process model
 and its digitalized instance of an executable process. Singer [@singer:2016]
 enhanced this model by proposing an actor based solution with the philosophy of
 S-BPM in mind and also using S-BPM as modeling language. There are several
 important reasons which should be mentioned for his decision. 
 
-First, there seems to be a large gap between theory, academic research and
-practice [TODO citation needed]. A way of modeling is needed which
-enables every participating employee to express his point of view into a
+A way of modeling is needed which enables every participating employee to express his point of view into a
 language which can be used to model a process. Furthermore, Singer [@singer:2016] proposes a
 general purpose virtual machine for hosting processes without the need of a
 heavy weight business process management system (BPMS). For the technical
@@ -46,8 +44,8 @@ Prinz et al. also state, that the biggest lack in today's BPMS is the execution 
 From Abstract Syntax Trees to Process Structure Trees
 --------------------------------------------------------------------------------
 
-To realize the aforementioned system and guarantee its overall functionality,
-[@prinz:2015] proposes an architecture which consists of two main parts: A
+To realize the aforementioned system and guarantee its overall functionality, Prinz et al.
+[@prinz:2015] propose an architecture which consists of two main parts: A
 compiler and a virtual machine, as it can be seen in +@fig:compiler-engine .
 
 ![A compiler engine overview [@prinz:2015]](images/print/architecture.pdf){#fig:compiler-engine}
@@ -62,7 +60,7 @@ This figure consists of three main parts:
 - a process-engine which represents the virtual machine and is able to
   directly instantiate processes from the IR.
 
-Though Prinz et al. add, that the whole system consists of four subsystems for implementing
+Though Prinz et al. [@prinz:2015] add, that the whole system consists of four subsystems for implementing
 a "general overall BPM system". The last subsystem is an error handler,
 which detects errors in process models and proposes corrections if possible.
 
@@ -89,7 +87,7 @@ syntactic and semantic analysis, the second phase (compiler-backend) consists of
 an intermediate code generator a code optimizer and a final code generator. The
 overall structure can be seen in +@fig:compiler 
 
-![One way of a conventional compiler.](images/compiler.png){#fig:compiler}
+![One way of a conventional compiler.](images/print/compiler.pdf){#fig:compiler}
 
 This typical design has some major disadvantages though. If you want to support
 several source languages on several platforms, you would need $n * m$ ($n$ being the amount of
@@ -109,11 +107,11 @@ about its implementation. Prinz et al. [@prinz:2014] in contrast,
 calls the analogous form in a BPM environment the Process Structure Tree. So the IR is a 
 more abstract term for the correct and complete representation of an algorithm or process.
 
-The llvm project uses such an architecture for the whole llvm framework. It consists of many low 
+The LLVM project uses such an architecture for the whole LLVM framework. It consists of many low 
 level libraries for compiling from different languages to different architectures [@llvm]. This is
 crucial for an open development process, where many developers want to implement new programming languages
 on many platforms.
-The whole llvm architecture consists of 3 main phases (see +@fig:retargetable-compiler). 
+The whole LLVM architecture consists of three main phases (see +@fig:retargetable-compiler). 
 Besides the frontend and backend, there is also a middleend which usually implements
 an optimization process of the IR. For example, getting rid of redundant computations.
 
@@ -216,13 +214,12 @@ In accordance to the above method, [@hoever] et al. define the following terms:
 
 The class hierarchy with all its relations can be seen in +@fig:hierarchy. 
 
-[Class hierarchy of the S-BPM ontology [@hoever]](images/class_hierarchy.png){#fig:hierarchy}
+![Class hierarchy of the S-BPM ontology [@hoever]](images/print/class_hierarchy.pdf){#fig:hierarchy}
 
 ## Combining S-BPM, ASMs and the VM Architecture
 
 After introducing S-BPM, the ASM method and the concept of a compiler based virtual machine for business processes,
 we can combine those concepts and illustrate it as a architecture implementation proposal with the Erlang platform in mind. 
-The same concept is targeted in recent research, as there are many different modeling languages in use.
 
-![Overview of the Process VM-architecture concerning the technical implementation with Erlang](images/vmarchitektur.png){#fig:vmarchitecture}
+![Overview of the Process VM-architecture concerning the technical implementation with Erlang](images/print/virtual-machine-architecture1.pdf){#fig:vmarchitecture}
 

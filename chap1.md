@@ -66,21 +66,43 @@ it comprises many concepts concerning concurrency and processes which directly m
 one to one to S-BPM modeling techniques and basics of communications between
 subjects. 
 
+Koehler et al [@koehler:2008] stated five typical areas of compiler theory and
+put them into context of a compiler for Business IT-systems:
+
+1. Lexical analysis and parsing,
+2. structural and semantic analysis,
+3. translation and intermediate code generation,
+4. code optimization and
+5. final assembly, linking and further optimization.
+
+This thesis concentrates on the third phase. Koehler et al. criticized the
+problems with "the translation from unstructured BPMN to structured Business Process Execution Language (BPEL)" 
+concerning the execution of processes. Since S-BPM has emerged, a way to execute
+S-BPM processes needs to be established.
+
+
+## Scientific goals
+
 This thesis aims to enhance the concept of this virtual machine for S-BPM processes 
-and propose a method for implementing the execution of processes.
-It especially tries to show how Elixir, on top of the Erlang platform, is able to
+and propose a method for implementing the execution of processes. It does so by 
+explaining abstract state machines (ASM). They are also defined as a "mathematical virtual
+machine" [@boerger:2003], as they enable the execution of any abstract algorithm. 
+
+It also tries to show how Elixir, on top of the Erlang platform, is able to
 support this approach. 
 
 Further, metaprogramming--- which Elixir is capable of---
 to compile a business process from its model into an executable program, this
 thesis will evaluate this method. The goal is to let Elixir write source code based on the model and compile it into a single application. This application would represent a business process on a technical level.
 
+## Structure
+
 Chapter two will set the theoretical background, by explaining and examining
 the parts of S-BPM which are essential to understand the problem. Essential
 language constructs, important for modeling and understanding a S-BPM process
 model, will be explained. 
 
-In chapter three the concept of abstract state machines (ASM) will be explained.
+In chapter three the concept of ASM will be explained.
 ASM is one way of notation to express the execution of algorithms. They have become
 a solid framework for system design and development, with many use cases in industry
 and research. ASMs are one way of making business processes executable as they have a

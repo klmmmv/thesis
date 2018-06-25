@@ -32,6 +32,7 @@ Abbreviations
 
 -------- -----------------------------------------------------------------------
 ASM      Abstract State Machine
+BPEL     Busines Process Execution Language
 BPM      Business Process Management                                         
 BPM CBOK Busines Process Management Common Body of Knowledge
 BPMN     Business Process Model and Notation                                 
@@ -49,6 +50,7 @@ SBD      Subject Behaviour Diagram
 SID      Subject Interaction Diagram                                         
 VHDL     VHSIC Hardware Description Language
 -------- -----------------------------------------------------------------------
+
 
 
 
@@ -80,10 +82,17 @@ Concerning the use of ASM, which is applicable for the frontend as well as the m
 Kurzfassung
 ================================================================================
 
-Occaecati neque nostrum ratione aperiam ea quia culpa. Est blanditiis aut nostrum rerum expedita voluptatibus explicabo. Possimus et ea rem impedit mollitia. Rerum quo totam aut porro pariatur. Est eveniet et suscipit est perferendis quia. Et maiores beatae occaecati nulla est quo sequi.
-Quas deserunt sint assumenda est et quo voluptatum. Doloremque a cumque consequatur a labore. Eos quae aut praesentium iusto accusantium.
-A doloremque dolor eum aspernatur sunt nobis. Quibusdam perferendis dolorum laudantium odio expedita aliquid. Voluptas expedita ullam itaque nesciunt nisi itaque architecto. Dolore expedita vero sit porro aut.
-Quae accusantium est laborum laborum animi. Natus atque quas cum incidunt est praesentium possimus. Rerum laborum non fuga deleniti voluptas eius quo. Voluptas qui sunt ex et. Totam expedita quo ab ut aut iure odio. Dicta est sit itaque sunt distinctio dignissimos eligendi velit.
-Facilis ipsa voluptatem earum cumque. Rem libero maxime praesentium quam et. Magnam provident consequatur nulla est sapiente voluptatem autem molestias. Quibusdam impedit explicabo nemo soluta voluptas. Quis et eos saepe ea dolorem beatae. Animi consectetur nihil sunt.
+Geschäftsprozessmanagement hat noch einige offene Baustellen, besonders bei der Ausführung
+von Prozessen, wenn man den Prozesslebenszyklus betrachtet. Deshalb wurde in wissenschaftlichen
+Arbeiten nach einem einheitlichen System für das Management gesucht. Es wurde die Idee
+einer Compiler basierten virtuellen Maschine für Geschäftsprozesse entwickelt. Da dies eine
+interdisziplinäre Aufgabe darstellt und die Idee recht neu is, gibt es noch keine fertigen Softwarelösungen.
+
+Diese Diplomarbeit zeigt wie man anhand von abstrakten Automaten Geschäftsprozesse ausführen kann.
+Die Methode ermöglicht es einem Algorithmen auf eine formale Art auszuführen. Zusätzlich gibt
+es erweitere abstrakte Automaten mit denen man verteilte Systeme entwickeln kann.
+
+Weiters wurde recherchiert wie die Elixir-Plattform, eine recht neue Programmiersprache, für diesen
+Zweck geeignet ist. 
 
 \mainmatter

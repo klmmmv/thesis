@@ -18,7 +18,7 @@ have a look at [@introducing:erlang], [@introducing:elixir], [@mccord:2015], [@j
 The purpose of using ASMs and S-BPM together for implementing a BP-runtime,
 enables us to automatically verify and execute processes. Validating a BP
 still requires manual work. Based on those techniques we are able to model
-a BP with a software tool and ---upon correct modeling --- instantiate a 
+a BP with a software tool and --- upon correct modeling --- instantiate a 
 technical process in a runtime. 
 The foundation for the ASM-interpreter is taken from [@fleischmann:2010] and [@boerger:2003].
 
@@ -32,7 +32,7 @@ possible entry- and exit-edges. Those edges lead to the next node (state).
 To model and implement the transition from one node to another, we bind guards
 or conditions to the entry- and exit-edges. 
 Therefore every node has a set of edges and functions which select one of the
-edges as entry or exit, depending on the entry or exit condition. +@fig:node depicts a single node
+edges as entry or exit, depending on the entry or exit condition. In +@fig:node a single node is depicted.
 
 ![A node according to graph theory](images/print/node.pdf){#fig:node}
 
@@ -92,7 +92,7 @@ There is no extra implementation needed for scalability and distributed services
 Elixirs concurrency model {#concurrency}
 --------------------------------------------------------------------------------
 
-The erlang platform was first released in 1987 by Ericsson. Its main goal was to program
+The Erlang platform was first released in 1987 by Ericsson. Its main goal was to program
 the telephone exchange spots and switches in public switched telephone networks.
 Those networks had a lot of different agents--- or autonomous computers--- which had to
 fulfill tasks concurrently together.
@@ -104,61 +104,61 @@ other processes or applications.
 A process in Elixir is basically a self-contained sequential program which runs
 on its own. It is completely isolated in terms of scheduling and memory access.
 In Elixir, a process is implemented in the language. It is not an operating
-system (OS) process or thread. It is entirely handled by the erlang virtual
+system (OS) process or thread. It is entirely handled by the Erlang virtual
 machine, which always consists of only one OS process. This way the Erlang VM
 doesn't need to add OS thread specific overhead to a process and is very
 lightweight in comparison.
 In comparison, object oriented programming (OOP) languages use objects as their
 main way of modeling and implementing software. And hierarchies of said objects
 explain the relation of them. 
-In contrast to that concept, in erlang and elixir, applications are built upon
+In contrast to that concept, in Erlang and Elixir, applications are built upon
 processes which fulfill tasks and communicate with asynchronous or synchronous messages
 to share their results, which lead to the overall goal.
 Processes are also the main way to store some form of state and update that state
 in the same process.
-To give a better illustration of how important processes are for elixir, the +@fig:vis 
-gives an overview of all processes of an elixir application. The elixir application
+To give a better illustration of how important processes are for Elixir, the +@fig:vis 
+gives an overview of all processes of an Elixir application. The Elixir application
 is a web application made with the powerful phoenix web framework [^phoenix]. 
 This is the minimum set of code to run a phoenix web application. Each dot represents
 one process (252 in total). The edges symbolize links, which is used to model a form of
 dependence among processes. One of those links could be a supervision strategy like explained below.
 
-Erlang is capable of handling several 100000 processes on a single machine/erlang node with 4 cores(see subsection [Nodes]) with standard configuration.
+Erlang is capable of handling several 100000 processes on a single machine/Erlang node with 4 cores(see subsection [Nodes]) with standard configuration.
 Though it is artificially reduced to "only" 400000 processes per node, the platform is capable of using a lot more processes.
-An often cited illustration of how powerful erlangs processes are, is the usage of erlang at
+An often cited illustration of how powerful Erlang's processes are, is the usage of Erlang at
 Whatsapp serving over two million distinctive connections at a specific point of time [^whatsapp1] [^whatsapp2] [^whatsapp3] [^whatsapp4].
 Unfortunately, Whatsapp is not very verbose about its technical implementations and no newer figures than from 2014
 have been published.
 
 ![A process overview of a blank phoniex web application.](images/webapp.png){#fig:vis .class}
 
-elixir processes don't share anything with other processes when being executed. 
+Elixir processes don't share anything with other processes when being executed. 
 Supervisors are the common way to handle errors and execution problems,
 by restarting them, instead of handling every exception.
 Therefore it is important to define a clean initialization function and,
 when restarting a process, bring the crashed process into its last working
-state. As processes are the way to keep state in elixir applications, yet 
+state. As processes are the way to keep state in Elixir applications, yet 
 another process will be used for state tracking of the processes.
 
-This behaviour leads to a certain design decision for elixir applications,
+This behaviour leads to a certain design decision for Elixir applications,
 and the S-BPM virtual machine, which enables and improves the fault tolerance
 of such a system.
 While there needs to be one centralized instance which keeps track of the state
-of every S-BPM-process, executing subjects (also an elixir process) may be running
+of every S-BPM-process, executing subjects (also an Elixir process) may be running
 on any available Erlang node in the network. Again, this network may span over company
 boundaries.
 The advantage of this architecture is that a subject or even a whole S-BPM-process supervisor
 is able to crash as long as the state process is being kept intact.
-This paradigm of supervisors inside a supervision tree is very common in elixir aplpications (see +@fig:supervision-tree).
+This paradigm of supervisors inside a supervision tree is very common in Elixir applications (see +@fig:supervision-tree).
 
-![The supervision tree of processes](images/supervision-tree.pdf){#fig:supervision-tree}
+![The supervision tree of processes](images/print/supervision-tree.pdf){#fig:supervision-tree}
 
 As it was stated earlier, the concurrency model is the same as you can find in an 
 SID like in +@fig:legislative, chapter 2. So the agents are sending each other messages
-and can execute tasks. A very basic implementation of a elixir process may look like 
+and can execute tasks. A very basic implementation of a Elixir process may look like 
 in the following listing:
 
-~~~{.elixir .numberLines caption="A process implemented in elixir."}
+~~~{.elixir .numberLines caption="A process implemented in Elixir."}
 defmodule MyProcess do
   def loop() do
     receive do
@@ -183,7 +183,7 @@ the process will print ``"Hello world"`` and start the process loop again (calli
 Also a timeout is set for thirty seconds, after which the process humbly asks
 for some messages.
 
-The usage of this process (``MyProcess``) is illustrated in this interactive elixir (IEx) session:
+The usage of this process (``MyProcess``) is illustrated in this interactive Elixir (IEx) session:
 
 ~~~{.elixir caption="IEx Session on how to use a process"}
 iex> pid = spawn_link(MyProcess, :loop, [])
@@ -208,8 +208,8 @@ So a process in Elixir is more than just a way of how to model concurrency. It i
 
 ### Nodes {#nodes}
 
-With the erlang platform, there also comes the feature of erlang Nodes. An erlang node
-is simply an erlang VM instance. Nodes can be connected to work together. 
+With the Erlang platform, there also comes the feature of Erlang Nodes. An Erlang node
+is simply an Erlang VM instance. Nodes can be connected to work together. 
 It is a very important part of enabling distributed, scalable and fault tolerant applications.
 In conjunction with the paradigm of many small processes, distribution and concurrency are
 relatively easy to implement and maintain.
@@ -236,7 +236,7 @@ it is well suited to explain what code writing code means. In this example we
 write a bash script, which produces an additional bash script, which represents
 the program we want to implement. In this case the metaprogram therefore writes
 a script, which will print the numbers from 1 to 1337. It consists exactly of
-1338 lines (the first being the typical unix imperative to use bash as shell interpreteer). The result looks like follows:
+1338 lines (the first being the typical Unix imperative to use bash as shell interpreter). The result looks like follows:
 
 ~~~{.bash caption="\"Compiled\" Unix shell script"}
 #!/bin/bash
@@ -275,7 +275,7 @@ code will explain this further:
 
 The return value of this statement is:
 
-~~~{.elixir .numberLines language=Elixir caption="Elixirs way of representing the AST"}
+~~~{.elixir .numberLines language=Elixir caption="Elixir's way of representing the AST"}
     {:+, [context: Elixir, import: Kernel], [2, 3]}
 ~~~
 
@@ -312,7 +312,6 @@ quote do: if (2 + 3 == 5), do: IO.puts("2 + 3 = 5")
  ]
 }
 ~~~
-***TODO***: add concrete syntax tree as example with a more complex statement, also as a graphic
 
 Elixirs macros work differently than for example C/C++ macros, which work with
 pure text. Elixir macros on the other hand work on ASTs.

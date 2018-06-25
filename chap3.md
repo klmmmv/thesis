@@ -1,5 +1,14 @@
 # Abstract State Machines 
 
+The purpose of ASMs are best described with Gurevich's ASM thesis, that "every algorithm, no matter how abstract, is step-for-step
+emulated by an appropriate ASM" [@yuri].
+
+Since the ASM method is a powerful framework for system design it has the possibilities to be
+used in on several occasions concerning the virtual machine architecture. Control-state ASMs
+are a graphical notation to model systems and therefore business processes. This graphical representation
+is able to be notated in textual form as pseudo code, which could be used as a interchange format of business
+processes. The third use case in the context of this thesis is the execution of business processes.
+
 This chapter will introduce the ASM method for high-level system design for
 designing and implementing complex systems. The method itself has been developed
 in the 1990's and successively got more attention, despite the first strong opposition.
@@ -114,12 +123,12 @@ There are four major benefits when using the ASM method [@lerchner]:
 - Execution: ASM specifications are able to be verified and validated, and therefore can also be executed. 
 
 The ASM-method lets the developer/engineer decide at any given point, which
-layer of abstraction he chooses. As any machine can have a function which is
+layer of abstraction one chooses. As any machine can have a function which is
 more or less powerful (which resembles the granularity of abstraction). There are different
 views of abstraction of the process itself. Each one is expressing the same thing, just
 at another level of detail.
 This concept is known as refinement and can also be seen in S-BPM itself. The refinement process
-will be discussed later on in more detail.
+will be discussed later in more detail.
 
 The most important practical benefit of the ASM-method is to provide a simple
 and precise framework to communicate and document design ideas and a support for
@@ -141,10 +150,10 @@ ground model will be produced. Each of those will be verified through manual and
 When the model is detailed enough to be implemented in code, the system can also be validated using
 according test cases.
 
-![ASM-based methods and models](images/print/asm_methods.pdf){#fig:framework}
+![ASM-based methods and models [@boerger:2003]](images/print/asm_methods.pdf){#fig:framework}
 
-The difference between validation and verification is that the former means:"Are we
-building the right thing?". Whereas the latter means:"Are we building the thing right?".
+The difference between validation and verification is that the former means: "Are we
+building the right thing?". Whereas the latter means: "Are we building the thing right?".
 
 So validation is the review if the process is effective and "whether its expected result is delivered
 in the form of a product or service" [@fleischmann:2010]. This also corresponds to the statement of 
@@ -156,7 +165,7 @@ Before explaining ASMs in detail, the understanding of ASMs can be simplified by
 2. the ASM refinement method and
 3. the ASM ground model [@boerger:asmchar].
 
-When talking about pseudo-code, we are talking about "high-level algorithmic processes"[@boerger:asmchar].
+When talking about pseudo-code, we are talking about "high-level algorithmic processes" [@boerger:asmchar].
 
 
 ## Basic ASMs
@@ -201,7 +210,7 @@ the following:
   the automaton state into the accepting state ($q_1$).
 
 According to this we can define the transition table (the $\ast$ symbol, 
-  marks the accepting state and \rightarrow the initial state):
+  marks the accepting state and \rightarrow  the initial state):
 
  current state         0       1
 ------------------- ------- -------
@@ -365,13 +374,13 @@ the signatures of the modules functions. The form looks like in the following li
 
 ~~~{.pseudo mathescape=true}
 MODULE $m$
-IMPORT $m_1(id_{1l_1},...,id_{1l_i}),...,m_k(id_k1,...,id_{kl_j})$
+IMPORT $m_1(id_{1l_1},...,id_{1l_i}),...,m_k(id_{k1},...,id_{kl_j})$
 EXPORT $id_1,...,id_e$
 SIGNATUREs
 ~~~
 
 In this basic ASM we can see that the ASM module is called $m$ and it imports the functions
-$id_{1l_1}$ to $id_{1l_i}$ from the module $m1$ (accordingly it does so with functions from up to the module $m_k$).
+$id_{1l_1}$ to $id_{1l_i}$ from the module $m_1$ (accordingly it does so with functions from up to the module $m_k$).
 Further the module exports its functions with the names $id_1$ to $id_e$. Only functions which are 
 exported in their defining module, can be imported into other modules.
 In the body of the module, the declarations of functions and rules are listed.
@@ -383,7 +392,7 @@ In the body of the module, the declarations of functions and rules are listed.
 
 To better illustrate what an ASM is and how it looks like, some short examples shall be given.
 The first one is an example for a simple clock. Its only task is to update the current time
-on the clocks display. Therefore we can write an ASM the following way:
+on the clock's display. Therefore we can write an ASM the following way:
 
 ~~~pseudo
 Clock = if DisplayTime + Delta = CurrTime then
@@ -404,7 +413,7 @@ In this simple example we have declared four functions:
 Another example exhibits a slightly more complex process, a typical 
 ordering process in retail. The goal of the process is, that someone
 invoices all pending/placed orders.
-The example was taken from [@boerger:2003]].
+The example was taken from [@boerger:2003].
 
 To define a ground model ASM of the ordering process, the questions
 from the ground model description should suffice to elevate the problem description.
@@ -506,7 +515,7 @@ refined machines.
 
 ## The ground model
 
-The ground model fills the gap between a users understanding of BP and their technical run behaviour.
+The ground model fills the gap between a users understanding of a business process and their technical run behaviour.
 
 The role of a system blueprint (ground model) is to capture changing requirements.
 The ground model is represented by documentation which is understandable and checkable
@@ -593,7 +602,7 @@ Ad the similarities of the S-BPM and ASMs method
 > of real-world problems and the deployment of their algorithmic
 > solutions by code-executing machines on changing platforms [@boerger:2003].
 
-both methods share three concern:
+both methods share three concerns:
 
 The ground model concern
 
@@ -640,9 +649,8 @@ Model checking in its most basic approach always consists of two parts:
    This step is usually done in model description languages which are similar to C, Java or pseudo languages.
 
 To formalize the aforementioned characteristics of model checking, it is a 
-description of a system($M$), which is checked against a 
-logical formula ($\phi$) [@wiki:modelchecking].
-$M \models \phi$
+description of a system $M$, which is checked against a 
+logical formula $\phi$ [@wiki:modelchecking]. Which we write as: $M \models \phi$.
 
 "In terms of mathematical logic, one checks that the system description is a model of a
 temporal logic formula. This explains the term 'model checking'." [@principlesmc, pp. 12]
