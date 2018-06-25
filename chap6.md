@@ -11,7 +11,7 @@ Compiler theory and virtual machines are complex concepts and the terms should
 not be used light hearted. This thesis showed that the virtual machine part
 can actually be called a virtual machine. This was proven by examining the concept
 of ASMs. The part of the compiler --- as a whole --- is still open for discussion
-and more in depth research.
+and more in depth research should be done.
 
 ASMs are not only a way to develop hard- and software systems
 but as we have seen also business processes. They have the capability
@@ -23,14 +23,12 @@ Because of that, they are a good way to also execute the processes.
 
 As business processes are of distributed, parallel and concurrent nature 
 a way of handling this behaviour has been introduced by enhancing basic 
-ASMs to multi-agent ASMs. By using them for the execution also a mapping
-of the understanding of S-BPM processes to the multi-agent ASMs can be made
-and understanding the one concept, means to also understand the other one.
+ASMs to multi-agent ASMs. 
 
 Though the capabilities of ASMs of being used in the frontend, the middleend (or the IR)
 and the backend have been shown, there is also some criticism if ASMs
 are a good tool for every employee with different scientific background
-and skills. As Reisig [@reisig] has experienced a lot of difficulties with his
+and skills, as Reisig [@reisig] has experienced a lot of difficulties with his
 students understanding and learning ASMs correctly.
 Additionally the frontend and middleend already have a good foundation in research
 in contrast to the execution.
@@ -59,7 +57,7 @@ domain specific languages.
 
 ## Future Work
 
-The idea of the compiler based virtual machine architecture is a interdisciplinary
+The idea of the compiler based virtual machine architecture is an interdisciplinary
 concept and there are many question yet to be answered. When we look at the phases
 of compiler theory, the phase of optimization of business processes in their compiled
 format is still unexplored. Research has to tackle the question if and how the

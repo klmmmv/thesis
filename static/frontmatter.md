@@ -96,3 +96,4 @@ Weiters wurde recherchiert wie die Elixir-Plattform, eine recht neue Programmier
 Zweck geeignet ist. 
 
 \mainmatter
+
