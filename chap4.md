@@ -79,7 +79,7 @@ the producer and consumer side. In compiler theory those terms equal to frontend
 
 In Prinz' and Singer's proposal and refinements, there is a compiler-like application which
 parses, transforms and semantically analyzes the given process model, which does
-not resemble a complete and proper compiler. Though conventially, a compiler is composed of
+not resemble a complete and proper compiler. Though conventionally, a compiler is composed of
 two main phases which can be differentiated into several other phases
 [see @grundlagen]: The analysis and the synthesis. While the analytical
 phase (usually also known as the compiler-frontend) consists of a lexical,

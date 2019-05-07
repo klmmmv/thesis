@@ -28,7 +28,7 @@ And he answers the question with:
 > representation of a program are related to the real world items of a state.
 
 This stands in contrast to conventional computation, which only "concentrates on the transformation of symbols,
-not dwelling too deply on what they stand for. So when using ASM the notion of states is more about
+not dwelling too deeply on what they stand for. So when using ASM the notion of states is more about
 the concept designers have in mind, when developing a system, or implementing software.
 [@reisig] even speculates, that one day ASM may be the "adequate notion of 'algorithms'". Keeping in mind
 that computable algorithms are only a subclass (a very important though) of all algorithms.
@@ -104,7 +104,7 @@ Using ASMs enables engineers to:
 
 - Develop a *ground model*. The ground model represents a correct and complete
   human-centric task formulation. This is the result of the requirements
-  captuure process. It is basically the binding contract between the
+  capture process. It is basically the binding contract between the
   application domain expert (usually the customer) and the system designer
 - Refine the ground model. Several intermediate models constitute a *hierarchy
   of refined models*.
@@ -295,7 +295,7 @@ Functions
   out functions represent a form of input and output of a machine. We also call the in functions
   monitored, which makes it obvious, that such functions are not updatable by the machine itself.
   Whereas the out functions are updated by the machine, but not read in any form.
-  Similarily, controlled functions are only updatable by the machine itself, but no other machine, but
+  Similarly, controlled functions are only updatable by the machine itself, but no other machine, but
   also readable by the machine.
   And shared functions are readable and updatable by the shared functions executing machine, and other
   machines as well.
@@ -473,7 +473,7 @@ ground models in ASMs:
 
 - the understanding of what a system's state can be, 
 - local transitions which alter a global state, and
-- scheduling or cuncurrency issues in the system.
+- scheduling or concurrency issues in the system.
 
 
 ## ASM Refinements
@@ -498,7 +498,7 @@ most refined version is the direct instruction for an engineer who implements th
 Though every refinement of the ground model is supposed to be understandable by both roles, as it is intended to be 
 the common language.
 
-Formally we call an ASM $M$ and its refined version $M\ast$. We define states $S$ of $M$ which tranform into other states
+Formally we call an ASM $M$ and its refined version $M\ast$. We define states $S$ of $M$ which transform into other states
 called $S'$. States of a refined machine are called $S\ast$ and its successor states $S\ast'$ and so on.
 In +@fig:refinement a scheme is depictured to illustrate the relationships of the refined automaton, its states
 and transition steps. 
@@ -719,31 +719,31 @@ be established:
  Language   Informational   Functional      Dynamic         Organizational
             view            view            view            view
 ---------- --------------- --------------- --------------- ----------------
-IDEF3      								   definately
+IDEF3      								   definitely
 
-Petri Nets 								   definately
+Petri Nets 								   definitely
 
-RAD        somewhat						   definately      definately
+RAD        somewhat						   definitely      definitely
 
-EPC        references                      definately      references
+EPC        references                      definitely      references
 
-REA                         definately     definately      definately 
+REA                         definitely     definitely      definitely 
 
-BPML       references                      definately      somewhat
+BPML       references                      definitely      somewhat
 
 WPDL       references
 
-RosettaNet definately                      definately
+RosettaNet definitely                      definitely
 
-ebXML      definately                      definately      somewhat
+ebXML      definitely                      definitely      somewhat
 
-BPEL4WS    references                      definately      definately
+BPEL4WS    references                      definitely      definitely
 
-OORAM      definately       somewhat       definately      somewhat
+OORAM      definitely       somewhat       definitely      somewhat
 
-EDOC       definately       definately     definately      definately
+EDOC       definitely       definitely     definitely      definitely
 
-UML2       definately       definately     definately      has the 
+UML2       definitely       definitely     definitely      has the 
                                                            ingredients
 --------------------------------------------------------------------------
 
@@ -776,7 +776,7 @@ to be used as modeling language by business process experts for the following re
   process constructs. This makes it possible to build inspectable and provable
   ground models.
 
-- Ground models in the ASM context constitue a precise and complete specification 
+- Ground models in the ASM context constitute a precise and complete specification 
   for the software implementation. Yet the underpinning of the method is hidden
   from the business process expert and (but not necessarily) the software engineer.
 
