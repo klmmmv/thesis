@@ -370,7 +370,7 @@ a specific time in the receiving state, a different action can be taken than
 the happy path. This is being exhibited in +@fig:rcv-timeout. This figure also
 introduces another concept. Different paths can be chosen according to
 variables in the message or business object (which is part of the message).
-The variable in thise case is the approval or disapproval of a manager. 
+The variable in this case is the approval or disapproval of a manager. 
 Timeouts also can be initiated by subjects themselves. This is yet again a simple message with the variable "breakup" instead of the "timeout" path.
 
 ![Timeout and transition logic in receiving state](images/print/comm3.pdf){#fig:rcv-timeout .class }
@@ -398,7 +398,7 @@ name of the macro. A macro therefore, only shows the most important part: its in
 ### Business Objects {#bo}
 
 Business Objects are structured objects which can be sent along with messages.
-Each BO has a name and a specififc content and the business object itself can
+Each BO has a name and a specific content and the business object itself can
 be seen as the payload of each message. Fleischmann et al. [@fleischmann:2010]
 defines business objects as physical and logical "things" that are required to
 process business transactions. According to him they can be considered as data
@@ -487,7 +487,7 @@ process.
 The strong emphasis on the subjects and the communication between them, has changed the paradigm of how to think 
 of business processes. 
 
-[^eu-procedure]: The ordinary legaslative procedure of the EU for evaluating
+[^eu-procedure]: The ordinary legislative procedure of the EU for evaluating
 a statute: http://www.europarl.europa.eu/external/appendix/legislativeprocedure/europarl_ordinarylegislativeprocedure_howitworks_en.pdf;
 accessed on 02.02.2018; the process has been shortened for reasons of simplicity. In real world scenarios
 there are two additional rehearsals of the proposal, done by the council and the parliament.
